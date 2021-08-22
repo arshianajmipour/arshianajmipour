@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Animal extends Model
 {
-    protected $table = 'my_flights';
+    protected $table = 'animals';
     protected $casts = [
         'tavalod' => 'array'
     ];
