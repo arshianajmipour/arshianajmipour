@@ -15,6 +15,7 @@ class CreateSalonTable extends Migration
     {
         Schema::create('salon', function (Blueprint $table) {
             $table->id();
+            $table->integer("salon_id");
             $table->timestamps();
         });
     }

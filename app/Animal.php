@@ -10,4 +10,8 @@ class Animal extends Model
     protected $casts = [
         'tavalod' => 'array'
     ];
+    public function animal()
+    {
+        return $this->belongsTo(Gale::class, 'gale_id');
+    }
 }
