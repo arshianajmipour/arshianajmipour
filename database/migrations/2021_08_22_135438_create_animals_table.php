@@ -15,6 +15,7 @@ class CreateAnimalsTable extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
+            $table->primary('id');
             $table->timestamps();
             $table->integer('pelak');
             $table->json('tavalod')->nullable();

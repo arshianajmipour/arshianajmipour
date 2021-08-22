@@ -8,9 +8,9 @@ class Vazn extends Model
 {
     protected $table = 'vazn';
     protected $casts = [
-        'vazn' => 'array'
-        'tarikh' => 'array'
-        'tozihat' => 'array'
+        'vazn' => 'array',
+        'tarikh' => 'array',
+        'tozihat' => 'array',
     ];
     public function animal()
     {

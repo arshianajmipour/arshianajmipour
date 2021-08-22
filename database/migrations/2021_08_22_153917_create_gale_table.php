@@ -15,6 +15,7 @@ class CreateGaleTable extends Migration
     {
         Schema::create('gale', function (Blueprint $table) {
             $table->id();
+            $table->primary('id');
             $table->timestamps();
         });
     }
