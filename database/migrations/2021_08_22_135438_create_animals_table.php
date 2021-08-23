@@ -22,6 +22,9 @@ class CreateAnimalsTable extends Migration
             $table->enum('jensiat', ['nar', 'made']);
             $table->string('nejad');
             $table->enum('jhen', ['hetero', 'hemo','none']);
+            $table->enum('gone', ['boz', 'gosfand']);
+            $table->integer('gale_id');
+            $table->integer('vazn_id');
         });
     }
 
