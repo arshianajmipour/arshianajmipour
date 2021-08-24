@@ -11,7 +11,7 @@
                             <label for="pelak" class="col-md-4 col-form-label text-md-right">{{ __('شماره پلاک') }}</label>
 
                             <div class="col-md-6">
-                                <input id="pelak" type="number">
+                                <input id="pelak" type="number" name="pelak">
                             </div>
                         </div>
 
@@ -19,14 +19,14 @@
                             <label for="tavalod" class="col-md-4 col-form-label text-md-right">{{ __('تاریخ تولد') }}</label>
 
                             <div class="col-md-6">
-                                <input id="tavalod" type="date" >
+                                <input id="tavalod" type="date" name="tavalod">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="gone" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
 
                             <div class="col-md-6">
-                                <select id="gone" >
+                                <select id="gone" name="gone">
                                 	<option value="boz">بز</option>
                                 	<option value="gosfand">گوسفتد</option>
                                 </select>
@@ -36,7 +36,7 @@
                             <label for="jensiat" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
 
                             <div class="col-md-6">
-                                <select id="jensiat" >
+                                <select id="jensiat" name="jensiat">
                                 	<option value="nar">نر</option>
                                 	<option value="made">ماده</option>
                                 </select>
@@ -54,7 +54,7 @@
                             <label for="jhen" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
 
                             <div class="col-md-6">
-                                <select id="jhen" >
+                                <select id="jhen" name="jhen">
                                 	<option value="hetero">هیچکدام </option>
                                 	<option value="hemo">ههموزیگوت </option>
                                 	<option value="none">ههموزیگوت </option>

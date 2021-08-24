@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/newDamRegistration','MainController@newDamRegistration');
 Route::post('/newDamRegistration','MainController@newDam');
+Route::get('/damList','MainController@damList');
+Route::post('/damList/action','MainController@damListAction')->name('damList.action');

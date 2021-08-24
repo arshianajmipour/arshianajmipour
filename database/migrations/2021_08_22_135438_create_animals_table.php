@@ -20,11 +20,11 @@ class CreateAnimalsTable extends Migration
             $table->integer('pelak');
             $table->json('tavalod')->nullable();
             $table->enum('jensiat', ['nar', 'made']);
-            $table->string('nejad');
+            $table->string('nejad')->nullable();
             $table->enum('jhen', ['hetero', 'hemo','none']);
             $table->enum('gone', ['boz', 'gosfand']);
-            $table->integer('gale_id');
-            $table->integer('vazn_id');
+            $table->integer('gale_id')->nullable();
+            $table->integer('vazn_id')->nullable();
         });
     }
 
