@@ -17,6 +17,7 @@
                     {{ __('You are logged in!') }}
                 </div>
                 <a href="/newDamRegistration">ثبت دام جدید</a>
+                <a href="/damList">لیست دام ها</a>
             </div>
         </div>
     </div>
