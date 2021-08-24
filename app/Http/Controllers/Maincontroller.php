@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Animal;
+use view;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 class Maincontroller extends Controller
 {
     public function newDamRegistration()
     {
-        return view('newDamRegistartion');
+        return view('newDamRegistration');
     }
     public function newDam(Request $req)
     {
