@@ -17,16 +17,13 @@ class DatabaseSeeder extends Seeder
 class SimpleUserSeeder extends Seeder {
     public function run()
     {
-        for ($i = 0; $i < 10; $i++)
-        {
             DB::table('users')->insert(
                 array(
                     'name' => 'user',
                     'username' => 'user',
-                    'password' =>'123',
+                    'password' =>bcrypt(123),
                     'email' => 'arshianajmipour@gmail.com',
                 )
             );
-        }
 	}
 }
