@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Animal;
+use App\Gale;
+use App\Salon;
 use view;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -11,6 +13,16 @@ class Maincontroller extends Controller
     public function newDamRegistration()
     {
         return view('newDamRegistration');
+    }
+
+    public function newGaleRegistration()
+    {
+        return view('newGaleRegistration');
+    }
+
+    public function newSalonRegistration()
+    {
+        return view('newSalonRegistration');
     }
 
     public function damList()
@@ -32,6 +44,26 @@ class Maincontroller extends Controller
 	    $animal->save();
 	    return redirect('newDamRegistration');
     }
+
+    public function newGale(Request $req)
+    {
+	    $gale=Gale::create([
+    		'name' => $req->input('name'),
+    		'salon_number'=>$req->input('salon')
+		]);
+	    $gale->save();
+	    return redirect('newGaleRegistration');
+    }
+
+    public function newSalon(Request $req)
+    {
+	    $salon=Salon::create([
+	    	'salon_number'=> $req->input('salon_number')
+	    ]);
+
+	    $salon->save();
+	    return redirect('newSalonRegistration');
+    }    
 
     public function damListAction(Request $req)
     {

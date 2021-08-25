@@ -15,7 +15,9 @@ class CreateGaleTable extends Migration
     {
         Schema::create('gale', function (Blueprint $table) {
             $table->id();
-            $table->integer("salon_id");
+            $table->string("name" , 250);
+            $table->integer("salon_number");
+            $table->foreign('salon_number')->references('salon_number')->on('salon');
             $table->timestamps();
         });
     }

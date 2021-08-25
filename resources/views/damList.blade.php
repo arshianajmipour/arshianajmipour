@@ -7,7 +7,7 @@ use App\Gale;?>
 
 
 	@csrf
-	<table id="editable" class="table table-bordered table-scripted">
+	<table id="editable" class="table table-bordered table-scripted" name="editable">
 		<thead>
 			<tr>
 				<th></th>
@@ -39,13 +39,14 @@ use App\Gale;?>
 	</table>
 
 	<script type="text/javascript">
+
 		$(document).ready(function(){
 			$.ajaxSetup({
 				headers:{
 					'X-CSRF-Token' : $("input[name=_token]").val()
 				}
 			});
-			$('#editable').tabledit({
+			$('#editable').Tabledit({
 				url:'{{ route("damList.action")}}',
 				dataType:"json",
 				columns:{
