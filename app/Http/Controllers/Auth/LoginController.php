@@ -51,7 +51,7 @@ class LoginController extends Controller
         
         if(auth()->attempt($creds))
         {
-            return $this->authenticated($req, auth()->user());
+            return Redirect::to('home')->authenticated($req, auth()->user());
         }
         else return Redirect::to('login');
 

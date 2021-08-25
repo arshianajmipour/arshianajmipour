@@ -18,6 +18,8 @@
                 </div>
                 <a href="/newDamRegistration">ثبت دام جدید</a>
                 <a href="/damList">لیست دام ها</a>
+                <a href="/newGaleRegistration">ثبت گله جدید</a>
+                <a href="/newSalonRegistration">ثبت سالن جدید  </a>
             </div>
         </div>
     </div>
