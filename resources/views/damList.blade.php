@@ -45,7 +45,7 @@ use App\Gale;?>
 					'X-CSRF-Token' : $("input[name=_token]").val()
 				}
 			});
-			$('#editable').tabledit({
+			$('#editable').Tabledit({
 				url:'{{ route("damList.action")}}',
 				dataType:"json",
 				columns:{
@@ -65,5 +65,7 @@ use App\Gale;?>
 			});
 	
 		});
-	</script>	
+	</script>
+    <script scr="/js/tabledit.min.js"></script>
+
 @endsection
