@@ -32,6 +32,9 @@ class Maincontroller extends Controller
         return view('damList')->withData($data);
     }
 
+    public function damDelete($id){
+    	return $id;
+    }
     public function newDam(Request $req)
     {
 	    $animal=Animal::create([

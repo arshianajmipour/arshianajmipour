@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
@@ -51,9 +52,9 @@ class LoginController extends Controller
         
         if(auth()->attempt($creds))
         {
-            return Redirect::to('home')->authenticated($req, auth()->user());
+            return redirect('home');
         }
-        else return Redirect::to('login');
+        else return redirect('login');
 
     }
 

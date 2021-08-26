@@ -7,6 +7,7 @@ use App\Vazn;
 use App\Gale;
 class Animal extends Model
 {
+
     protected $table = 'animals';
     protected $guarded = array();
     protected $casts = [
@@ -20,4 +21,5 @@ class Animal extends Model
     {
     	return $this->hasOne(Vazn::class,'vazn_id');
     }
+    
 }
