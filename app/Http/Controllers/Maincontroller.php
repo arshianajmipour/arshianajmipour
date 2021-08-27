@@ -29,7 +29,7 @@ class Maincontroller extends Controller
     {
     	$data = DB::table('animals')->get();
  
-        return view('damList')->withData($data);
+        return view('damList2')->withData($data);
     }
 
     public function damDelete($id){
