@@ -11,6 +11,4 @@ use App\Animal;?>
 		</div>
 	</div>
 
-
-
 @endsection
