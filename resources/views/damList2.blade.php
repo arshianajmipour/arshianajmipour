@@ -5,10 +5,29 @@
 use App\Gale;
 use App\Animal;?>
 
-	<div id="app">
+	<div id="data1">
+		<nav class="navbar navbar-expand-sm navbar-dark bg-info mb-2">
+			<div class="container">
+				<a href="#">لیست دام ها</a>
+			</div>
+		</nav>
 		<div class="container">
-			<animal></animal>
+			@foreach($data as $animal)
+				<div id="app" >
+					<animal></animal>
+				</div>
+			@endforeach
 		</div>
 	</div>
+<!-- 	<script type="application/javascript">
+		var app2 = new Vue({
+			el : '#app2' ,
+			data:{
+				pelak:''
+			}
+			
 
+
+		})
+	</script> -->
 @endsection
