@@ -2,6 +2,7 @@
     <div class="container">
     	<h2>animal22</h2>
     	<input v-model = "animal.id"/>
+
     </div>
 </template>
 
