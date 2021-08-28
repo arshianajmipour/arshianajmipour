@@ -1904,9 +1904,120 @@ module.exports = {
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Animals.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: c:\\arshia\\livestock\\resources\\js\\components\\Animals.vue: Unexpected token, expected \",\" (33:8)\n\n\u001b[0m \u001b[90m 31 |\u001b[39m   \t\tpelak\u001b[33m:\u001b[39m\u001b[32m''\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m   \t\tjensiat \u001b[33m:\u001b[39m\u001b[32m''\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m   \t\tform\u001b[33m-\u001b[39mseen\u001b[33m:\u001b[39m\u001b[36mfalse\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m   \t\t    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m   \t}\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m   \tanimal_id\u001b[33m:\u001b[39m\u001b[32m''\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m   \tedit\u001b[33m:\u001b[39m\u001b[36mfalse\u001b[39m\u001b[0m\n    at Parser._raise (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:798:17)\n    at Parser.raiseWithData (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:791:17)\n    at Parser.raise (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:752:17)\n    at Parser.unexpected (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:3257:16)\n    at Parser.expect (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:3231:28)\n    at Parser.parseObjectLike (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11945:14)\n    at Parser.parseExprAtom (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11432:23)\n    at Parser.parseExprSubscripts (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11081:23)\n    at Parser.parseUpdate (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11061:21)\n    at Parser.parseMaybeUnary (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11039:23)\n    at Parser.parseExprOps (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10882:23)\n    at Parser.parseMaybeConditional (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10856:23)\n    at Parser.parseMaybeAssign (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10814:21)\n    at c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10776:39\n    at Parser.allowInAnd (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:12595:12)\n    at Parser.parseMaybeAssignAllowIn (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10776:17)\n    at Parser.parseObjectProperty (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:12115:101)\n    at Parser.parseObjPropValue (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:12140:100)\n    at Parser.parsePropertyDefinition (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:12064:10)\n    at Parser.parseObjectLike (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11953:25)\n    at Parser.parseExprAtom (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11432:23)\n    at Parser.parseExprSubscripts (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11081:23)\n    at Parser.parseUpdate (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11061:21)\n    at Parser.parseMaybeUnary (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:11039:23)\n    at Parser.parseExprOps (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10882:23)\n    at Parser.parseMaybeConditional (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10856:23)\n    at Parser.parseMaybeAssign (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10814:21)\n    at Parser.parseExpressionBase (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10754:23)\n    at c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10748:39\n    at Parser.allowInAnd (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:12589:16)\n    at Parser.parseExpression (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:10748:17)\n    at Parser.parseReturnStatement (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:13174:28)\n    at Parser.parseStatementContent (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:12844:21)\n    at Parser.parseStatement (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:12796:17)\n    at Parser.parseBlockOrModuleBlockBody (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:13385:25)\n    at Parser.parseBlockBody (c:\\arshia\\livestock\\node_modules\\@babel\\parser\\lib\\index.js:13376:10)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      animals: [],
+      animal: {
+        id: '',
+        pelak: '',
+        jensiat: ''
+      },
+      animal_id: '',
+      edit: false,
+      formSeen: false
+    };
+  },
+  created: function created() {
+    this.fetchAnimals();
+  },
+  methods: {
+    fetchAnimals: function fetchAnimals() {
+      var _this = this;
+
+      fetch('api/animals').then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        _this.animals = res.data;
+      });
+    },
+    hideForm: function hideForm() {
+      this.formSeen = 0;
+    },
+    addAnimal: function addAnimal() {
+      var _this2 = this;
+
+      if (this.edit === true) {
+        fetch('api/animals', {
+          method: 'put',
+          body: JSON.stringify(this.animal),
+          headers: {
+            'content-type': 'aplication/json'
+          }
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          _this2.animal.formSeen = false;
+          alert('اطلاعات دا بروزرسانی شد.');
+
+          _this2.fetchAnimal();
+        });
+      }
+    },
+    editAnimal: function editAnimal(animal) {
+      this.edit = true;
+      this.formSeen = animal.id;
+      this.animal.formSeen = true;
+      this.animal.pelak = animal.pelak;
+      this.animal.jensiat = animal.jensiat;
+    },
+    deleteAnimal: function deleteAnimal(id) {
+      var _this3 = this;
+
+      if (confirm('آیا از حذف این دام اطمینان دارید؟')) {
+        fetch('api/animals/${id}', {
+          method: 'delete',
+          body: JSON.stringify(this.animal),
+          headers: {
+            'content-type': 'aplication/json'
+          }
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          _this3.animal.formSeen = false;
+          alert('دام مورد نظر حذف شد');
+
+          _this3.fetchAnimal();
+        });
+      }
+    }
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  }
+});
 
 /***/ }),
 
@@ -37574,136 +37685,163 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "container" },
-    _vm._l(_vm.animals, function(animal) {
-      return _c("div", { key: animal.id, staticClass: "card card-body mb-2" }, [
-        _c("h3", [_vm._v(_vm._s(animal.id))]),
-        _vm._v(" "),
-        _c("h3", [_vm._v(_vm._s(animal.pelak))]),
-        _vm._v(" "),
-        _c("h3", [_vm._v(_vm._s(animal.jensiat))]),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn_warning mb-2",
-            on: {
-              click: function($event) {
-                return _vm.editAnimal(animal)
-              }
-            }
-          },
-          [_vm._v("بهروزرسانی")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn_danger ",
-            on: {
-              click: function($event) {
-                return _vm.deleteAnimal(animal.id)
-              }
-            }
-          },
-          [_vm._v("حذف")]
-        ),
-        _vm._v(" "),
-        animal.form - _vm.seen
-          ? _c(
-              "form",
-              {
-                staticClass: "mb-3",
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    return _vm.addAnimal.apply(null, arguments)
-                  }
-                }
-              },
-              [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: animal.pelak,
-                      expression: "animal.pelak"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "number" },
-                  domProps: { value: animal.pelak },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(animal, "pelak", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "select",
+    [
+      _c("a", { attrs: { href: "newDamRegistration" } }, [
+        _vm._v("افزودن دام جدید+")
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.animals, function(animal) {
+        return _c(
+          "div",
+          { key: animal.id, staticClass: "card card-body mb-2" },
+          [
+            _c("h3", [_vm._v("    " + _vm._s(animal.id))]),
+            _vm._v(" "),
+            _vm.formSeen !== animal.id
+              ? _c("h3", [_vm._v(" }}animal.pelak}} شماره پلاک:")])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.formSeen !== animal.id
+              ? _c("h3", [_vm._v("   جنسیت:" + _vm._s(animal.jensiat))])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.formSeen !== animal.id
+              ? _c(
+                  "button",
                   {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: animal.jensiat,
-                        expression: "animal.jensiat"
-                      }
-                    ],
+                    staticClass: "btn btn_warning mb-2",
                     on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.$set(
-                          animal,
-                          "jensiat",
-                          $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        )
+                      click: function($event) {
+                        return _vm.editAnimal(animal)
+                      }
+                    }
+                  },
+                  [_vm._v("بهروزرسانی")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.formSeen !== animal.id
+              ? _c(
+                  "button",
+                  {
+                    staticClass: "btn btn_danger ",
+                    on: {
+                      click: function($event) {
+                        return _vm.deleteAnimal(animal.id)
+                      }
+                    }
+                  },
+                  [_vm._v("حذف")]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.formSeen === animal.id
+              ? _c(
+                  "form",
+                  {
+                    staticClass: "mb-3",
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.addAnimal.apply(null, arguments)
                       }
                     }
                   },
                   [
-                    _c("option", { attrs: { value: "nar" } }, [_vm._v("نر")]),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: animal.pelak,
+                          expression: "animal.pelak"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "number" },
+                      domProps: { value: animal.pelak },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(animal, "pelak", $event.target.value)
+                        }
+                      }
+                    }),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "made" } }, [_vm._v("ماده")])
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: animal.jensiat,
+                            expression: "animal.jensiat"
+                          }
+                        ],
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              animal,
+                              "jensiat",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      [
+                        _c("option", { attrs: { value: "nar" } }, [
+                          _vm._v("نر")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "made" } }, [
+                          _vm._v("ماده")
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn_light btn-block",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v("ذخیره تغییرات")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn_danger btn-block",
+                        attrs: { type: "submit" },
+                        on: {
+                          click: function($event) {
+                            return _vm.hideForm()
+                          }
+                        }
+                      },
+                      [_vm._v("انصراف")]
+                    )
                   ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn_light btn-block",
-                    attrs: { type: "submit" }
-                  },
-                  [_vm._v("ذخیره تغییرات")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn_danger btn-block",
-                    attrs: { type: "submit" }
-                  },
-                  [_vm._v("انصراف")]
                 )
-              ]
-            )
-          : _vm._e()
-      ])
-    }),
-    0
+              : _vm._e()
+          ]
+        )
+      })
+    ],
+    2
   )
 }
 var staticRenderFns = []
