@@ -1,8 +1,7 @@
 <template>
     <div class="container">
     	<h2>animal22</h2>
-    	<input v-model:"id"></input>
-    	<p>:/</p>
+    	<input v-model = "animal.id"/>
     </div>
 </template>
 

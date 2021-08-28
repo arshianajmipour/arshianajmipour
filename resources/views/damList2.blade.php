@@ -12,11 +12,11 @@ use App\Animal;?>
 			</div>
 		</nav>
 		<div class="container">
+			<div id="app">
 			@foreach($data as $animal)
-				<div id="app" >
-					<animal></animal>
-				</div>
+				<animal></animal>
 			@endforeach
+			</div>
 		</div>
 	</div>
 <!-- 	<script type="application/javascript">
