@@ -14,11 +14,6 @@ class Animal extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' = $this->id,
-            'pelak'=$this->pelak,
-            'jensiat'=$this->jensiat
-        ]
-        ;
+        return parent::toArray($request);
     }
 }

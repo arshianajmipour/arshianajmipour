@@ -30,6 +30,23 @@ class Maincontroller extends Controller
     	$data = DB::table('animals')->get();
  
         return view('damList2')->withData($data);
+
+    }
+
+    public function getAnimals()
+    {
+    	$data = array('data' => Animal::all() );
+    	return $data;
+    }
+
+    public function editAnimals(Request $req)
+    {
+    	$animal = $req->isMethod('put') ? Animal::findOrFail($req->animal_id) : new Animal;
+    	if($animal->save()){
+        	$data = array('data' => Animal::all() );
+    		return $data;
+    	}
+
     }
 
     public function damDelete($id){
