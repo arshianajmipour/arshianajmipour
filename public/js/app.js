@@ -1936,6 +1936,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1943,7 +1948,9 @@ __webpack_require__.r(__webpack_exports__);
       animal: {
         id: '',
         pelak: '',
-        jensiat: ''
+        jensiat: '',
+        gone: '',
+        nejad: ''
       },
       animal_id: '',
       edit: false,
@@ -1966,30 +1973,32 @@ __webpack_require__.r(__webpack_exports__);
     hideForm: function hideForm() {
       this.formSeen = 0;
     },
-    addAnimal: function addAnimal() {
+    addAnimal: function addAnimal(animal) {
       var _this2 = this;
 
       if (this.edit === true) {
         fetch('api/animals', {
-          method: 'put',
-          body: JSON.stringify(this.animal),
+          method: 'post',
+          body: JSON.stringify(animal),
           headers: {
+            'Accept': 'application/json',
             'content-type': 'aplication/json'
           }
         }).then(function (res) {
           return res.json();
         }).then(function (data) {
-          _this2.animal.formSeen = false;
+          _this2.formSeen = 0;
           alert('اطلاعات دا بروزرسانی شد.');
 
-          _this2.fetchAnimal();
+          _this2.fetchAnimals();
         });
       }
     },
     editAnimal: function editAnimal(animal) {
       this.edit = true;
       this.formSeen = animal.id;
-      this.animal.formSeen = true;
+      this.animal.id = animal.id;
+      this.animal_id = animal.id;
       this.animal.pelak = animal.pelak;
       this.animal.jensiat = animal.jensiat;
     },
@@ -2001,15 +2010,16 @@ __webpack_require__.r(__webpack_exports__);
           method: 'delete',
           body: JSON.stringify(this.animal),
           headers: {
+            'Accept': 'application/json',
             'content-type': 'aplication/json'
           }
         }).then(function (res) {
           return res.json();
         }).then(function (data) {
-          _this3.animal.formSeen = false;
+          _this3.formSeen = false;
           alert('دام مورد نظر حذف شد');
 
-          _this3.fetchAnimal();
+          _this3.fetchAnimals();
         });
       }
     }
@@ -37698,7 +37708,7 @@ var render = function() {
             _c("h3", [_vm._v("    " + _vm._s(animal.id))]),
             _vm._v(" "),
             _vm.formSeen !== animal.id
-              ? _c("h3", [_vm._v(" }}animal.pelak}} شماره پلاک:")])
+              ? _c("h3", [_vm._v("    شماره پلاک:" + _vm._s(animal.pelak))])
               : _vm._e(),
             _vm._v(" "),
             _vm.formSeen !== animal.id
@@ -37743,74 +37753,87 @@ var render = function() {
                     on: {
                       submit: function($event) {
                         $event.preventDefault()
-                        return _vm.addAnimal.apply(null, arguments)
+                        return _vm.addAnimal(animal)
                       }
                     }
                   },
                   [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: animal.pelak,
-                          expression: "animal.pelak"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "number" },
-                      domProps: { value: animal.pelak },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(animal, "pelak", $event.target.value)
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "select",
-                      {
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c("label", { attrs: { for: "pellak" } }, [
+                        _vm._v("پلاک دام")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: animal.jensiat,
-                            expression: "animal.jensiat"
+                            value: animal.pelak,
+                            expression: "animal.pelak"
                           }
                         ],
+                        staticClass: "form-control",
+                        attrs: { type: "number", id: "pelak" },
+                        domProps: { value: animal.pelak },
                         on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.$set(
-                              animal,
-                              "jensiat",
-                              $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            )
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(animal, "pelak", $event.target.value)
                           }
                         }
-                      },
-                      [
-                        _c("option", { attrs: { value: "nar" } }, [
-                          _vm._v("نر")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "made" } }, [
-                          _vm._v("ماده")
-                        ])
-                      ]
-                    ),
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c("label", { attrs: { for: "jensiat" } }, [
+                        _vm._v("جنسیت:")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: animal.jensiat,
+                              expression: "animal.jensiat"
+                            }
+                          ],
+                          attrs: { id: "jensiat" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                animal,
+                                "jensiat",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "nar" } }, [
+                            _vm._v("نر")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "made" } }, [
+                            _vm._v("ماده")
+                          ])
+                        ]
+                      )
+                    ]),
                     _vm._v(" "),
                     _c(
                       "button",

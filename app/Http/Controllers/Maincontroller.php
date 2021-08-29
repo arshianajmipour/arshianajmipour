@@ -41,12 +41,21 @@ class Maincontroller extends Controller
 
     public function editAnimals(Request $req)
     {
-    	$animal = $req->isMethod('put') ? Animal::findOrFail($req->animal_id) : new Animal;
+    	$animal = Animal::where('id',$req->id)->first();
+    	$animal->pelak = $req->input('pelak');
+    	$animal->jensiat = $req->input('jensiat');
     	if($animal->save()){
         	$data = array('data' => Animal::all() );
     		return $data;
     	}
+    }
 
+    public function deleteAnimals($id){
+    	$animal =Animal::findOrFail($id);
+    	if($animal->delete()){
+    		$data = array('data' => Animal::all() );
+    		return $data;
+    	}
     }
 
     public function damDelete($id){
@@ -60,7 +69,7 @@ class Maincontroller extends Controller
     		'jhen' => $req->input('jhen'),
     		'jensiat' => $req->input('jensiat')
 		]);
-
+	    $animal->tavalod = $req->input('tavalod');
 	    $animal->save();
 	    return redirect('newDamRegistration');
     }

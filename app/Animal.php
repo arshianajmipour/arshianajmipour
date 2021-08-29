@@ -11,7 +11,7 @@ class Animal extends Model
     protected $table = 'animals';
     protected $guarded = array();
     protected $casts = [
-        'tavalod' => 'array'
+        
     ];
     public function animal()
     {

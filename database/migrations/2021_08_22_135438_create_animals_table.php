@@ -18,7 +18,7 @@ class CreateAnimalsTable extends Migration
             //$table->primary('id');
             $table->timestamps();
             $table->integer('pelak');
-            $table->json('tavalod')->nullable();
+            $table->date('birth_date')->nullable();
             $table->enum('jensiat', ['nar', 'made']);
             $table->string('nejad')->nullable();
             $table->enum('jhen', ['hetero', 'hemo','none']);

@@ -2,22 +2,27 @@
     <div class="container">
     	<a href="newDamRegistration">افزودن دام جدید+</a>
     	<div class ="card card-body mb-2" v-for="animal in animals" v-bind:key="animal.id">
-    		<h3 >    {{animal.id}}</h3>
-    		<h3 v-if="formSeen !== animal.id"> }}animal.pelak}} شماره پلاک:</h3>
+			<h3 >    {{animal.id}}</h3>
+    		<h3 v-if="formSeen !== animal.id">    شماره پلاک:{{animal.pelak}}</h3>
     		<h3 v-if="formSeen !== animal.id">   جنسیت:{{animal.jensiat}}</h3>
-
 
     		<button @click="editAnimal(animal)" class="btn btn_warning mb-2" 
     		v-if="formSeen !== animal.id">بهروزرسانی</button>
     		<button @click="deleteAnimal(animal.id)" class="btn btn_danger "
     	    v-if="formSeen !== animal.id">حذف</button>
 
-    		<form @submit.prevent="addAnimal" class="mb-3" v-if="formSeen === animal.id">
-    			<input type="number" class="form-control" v-model = "animal.pelak" >
-				<select v-model="animal.jensiat">
-                    <option value="nar">نر</option>
-                    <option value="made">ماده</option>
-                </select>
+    		<form @submit.prevent="addAnimal(animal)" class="mb-3" v-if="formSeen === animal.id">
+    		    <div class="form-group row">
+    				<label for ="pellak">پلاک دام</label>
+    				<input type="number" class="form-control" v-model = "animal.pelak" id= "pelak">
+    			</div>
+    			<div class="form-group row">
+    				<label for ="jensiat">جنسیت:</label>
+					<select v-model="animal.jensiat" id = "jensiat">
+                    	<option value="nar">نر</option>
+                    	<option value="made">ماده</option>
+                	</select>
+                </div>	
                 <button type="submit" class="btn btn_light btn-block">ذخیره تغییرات</button>
                 <button @click="hideForm()" type="submit" class="btn btn_danger btn-block">انصراف</button>
     		</form>
@@ -36,6 +41,8 @@ data: function() {
   		id:'',
   		pelak:'',
   		jensiat :'',
+  		gone : '',
+  		nejad: ''
   	},
   	animal_id:'',
   	edit:false,
@@ -56,27 +63,29 @@ methods:{
 	hideForm(){
 		this.formSeen = 0;
 	},
-	addAnimal(){
+	addAnimal(animal){
 		if(this.edit === true){
 			fetch('api/animals' , {
-				method : 'put' ,
-				body:JSON.stringify(this.animal),
+				method : 'post' ,
+				body:JSON.stringify(animal),
 				headers: {
+					'Accept': 'application/json',
 					'content-type' : 'aplication/json'
 				}
 			})
 			.then(res => res.json())
 			.then(data => {
-				this.animal.formSeen=false;
+				this.formSeen=0;
 				alert('اطلاعات دا بروزرسانی شد.');
-				this.fetchAnimal();
+				this.fetchAnimals();
 			});
 		}
 	},
 	editAnimal(animal){
 		this.edit = true;
 		this.formSeen = animal.id;
-		this.animal.formSeen = true;
+		this.animal.id = animal.id;
+		this.animal_id = animal.id;
 		this.animal.pelak = animal.pelak;
 		this.animal.jensiat = animal.jensiat;
 	},
@@ -86,14 +95,15 @@ methods:{
 				method : 'delete' ,
 				body:JSON.stringify(this.animal),
 				headers: {
+					'Accept': 'application/json',
 					'content-type' : 'aplication/json'
 				}
 			})
 			.then(res => res.json())
 			.then(data => {
-				this.animal.formSeen=false;
+				this.formSeen=false;
 				alert('دام مورد نظر حذف شد');
-				this.fetchAnimal();
+				this.fetchAnimals();
 			});
 		}
 	}
