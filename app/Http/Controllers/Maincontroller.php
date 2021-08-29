@@ -44,6 +44,9 @@ class Maincontroller extends Controller
     	$animal = Animal::where('id',$req->id)->first();
     	$animal->pelak = $req->input('pelak');
     	$animal->jensiat = $req->input('jensiat');
+    	$animal->tavalod = $req->input('tavalod');
+    	$animal->gone = $req->input('gone');
+    	$animal->jhen = $req->input('jhen');
     	if($animal->save()){
         	$data = array('data' => Animal::all() );
     		return $data;
@@ -52,6 +55,7 @@ class Maincontroller extends Controller
 
     public function deleteAnimals($id){
     	$animal =Animal::findOrFail($id);
+    	$animal->pelak =123;
     	if($animal->delete()){
     		$data = array('data' => Animal::all() );
     		return $data;

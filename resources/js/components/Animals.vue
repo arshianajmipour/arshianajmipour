@@ -2,9 +2,13 @@
     <div class="container">
     	<a href="newDamRegistration">افزودن دام جدید+</a>
     	<div class ="card card-body mb-2" v-for="animal in animals" v-bind:key="animal.id">
+
 			<h3 >    {{animal.id}}</h3>
     		<h3 v-if="formSeen !== animal.id">    شماره پلاک:{{animal.pelak}}</h3>
     		<h3 v-if="formSeen !== animal.id">   جنسیت:{{animal.jensiat}}</h3>
+    		<h3 v-if="formSeen !== animal.id">  تاریخ تولد :{{animal.tavalod}}</h3>
+    		<h3 v-if="formSeen !== animal.id">  گونه:{{animal.gone}}</h3>
+    		<h3 v-if="formSeen !== animal.id">  ژن :{{animal.jhen}}</h3>
 
     		<button @click="editAnimal(animal)" class="btn btn_warning mb-2" 
     		v-if="formSeen !== animal.id">بهروزرسانی</button>
@@ -17,10 +21,29 @@
     				<input type="number" class="form-control" v-model = "animal.pelak" id= "pelak">
     			</div>
     			<div class="form-group row">
+    				<label for ="tavallod">تاریخ تولد:   </label>
+    				<input type="date" class="form-control" v-model = "animal.tavalod" id= "tavallod">
+    			</div>
+    			<div class="form-group row">
     				<label for ="jensiat">جنسیت:</label>
 					<select v-model="animal.jensiat" id = "jensiat">
                     	<option value="nar">نر</option>
                     	<option value="made">ماده</option>
+                	</select>
+                </div>	
+                <div class="form-group row">
+    				<label for ="gone">  گونه: </label>
+					<select v-model="animal.gone" id = "gone">
+                    	<option value="boz">بز</option>
+                    	<option value="gosfand">مگوسفند</option>
+                	</select>
+                </div>	
+                <div class="form-group row">
+    				<label for ="jhen">ژن:</label>
+					<select v-model="animal.jhen" id = "jhen">
+                      	<option value="hetero">هیچکدام </option>
+                        <option value="hemo">ههموزیگوت </option>
+                        <option value="none">ههموزیگوت </option>
                 	</select>
                 </div>	
                 <button type="submit" class="btn btn_light btn-block">ذخیره تغییرات</button>
@@ -42,7 +65,9 @@ data: function() {
   		pelak:'',
   		jensiat :'',
   		gone : '',
-  		nejad: ''
+  		nejad: '',
+  		jhen:'',
+  		tavalod:''
   	},
   	animal_id:'',
   	edit:false,

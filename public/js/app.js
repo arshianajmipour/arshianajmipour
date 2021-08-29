@@ -1941,6 +1941,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1950,7 +1973,9 @@ __webpack_require__.r(__webpack_exports__);
         pelak: '',
         jensiat: '',
         gone: '',
-        nejad: ''
+        nejad: '',
+        jhen: '',
+        tavalod: ''
       },
       animal_id: '',
       edit: false,
@@ -37716,6 +37741,18 @@ var render = function() {
               : _vm._e(),
             _vm._v(" "),
             _vm.formSeen !== animal.id
+              ? _c("h3", [_vm._v("  تاریخ تولد :" + _vm._s(animal.tavalod))])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.formSeen !== animal.id
+              ? _c("h3", [_vm._v("  گونه:" + _vm._s(animal.gone))])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.formSeen !== animal.id
+              ? _c("h3", [_vm._v("  ژن :" + _vm._s(animal.jhen))])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.formSeen !== animal.id
               ? _c(
                   "button",
                   {
@@ -37787,6 +37824,34 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group row" }, [
+                      _c("label", { attrs: { for: "tavallod" } }, [
+                        _vm._v("تاریخ تولد:   ")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: animal.tavalod,
+                            expression: "animal.tavalod"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "date", id: "tavallod" },
+                        domProps: { value: animal.tavalod },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(animal, "tavalod", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
                       _c("label", { attrs: { for: "jensiat" } }, [
                         _vm._v("جنسیت:")
                       ]),
@@ -37830,6 +37895,106 @@ var render = function() {
                           _vm._v(" "),
                           _c("option", { attrs: { value: "made" } }, [
                             _vm._v("ماده")
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c("label", { attrs: { for: "gone" } }, [
+                        _vm._v("  گونه: ")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: animal.gone,
+                              expression: "animal.gone"
+                            }
+                          ],
+                          attrs: { id: "gone" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                animal,
+                                "gone",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "boz" } }, [
+                            _vm._v("بز")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "gosfand" } }, [
+                            _vm._v("مگوسفند")
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c("label", { attrs: { for: "jhen" } }, [_vm._v("ژن:")]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: animal.jhen,
+                              expression: "animal.jhen"
+                            }
+                          ],
+                          attrs: { id: "jhen" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.$set(
+                                animal,
+                                "jhen",
+                                $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              )
+                            }
+                          }
+                        },
+                        [
+                          _c("option", { attrs: { value: "hetero" } }, [
+                            _vm._v("هیچکدام ")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "hemo" } }, [
+                            _vm._v("ههموزیگوت ")
+                          ]),
+                          _vm._v(" "),
+                          _c("option", { attrs: { value: "none" } }, [
+                            _vm._v("ههموزیگوت ")
                           ])
                         ]
                       )
