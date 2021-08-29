@@ -10,9 +10,9 @@
     		<h3 v-if="formSeen !== animal.id">  گونه:{{animal.gone}}</h3>
     		<h3 v-if="formSeen !== animal.id">  ژن :{{animal.jhen}}</h3>
 
-    		<button @click="editAnimal(animal)" class="btn btn_warning mb-2" 
+    		<button @click="editAnimal(animal)" class="btn btn-warning mb-2" 
     		v-if="formSeen !== animal.id">بهروزرسانی</button>
-    		<button @click="deleteAnimal(animal.id)" class="btn btn_danger "
+    		<button @click="deleteAnimal(animal.id)" class="btn btn-danger "
     	    v-if="formSeen !== animal.id">حذف</button>
 
     		<form @submit.prevent="addAnimal(animal)" class="mb-3" v-if="formSeen === animal.id">
@@ -116,14 +116,8 @@ methods:{
 	},
 	deleteAnimal(id){
 		if(confirm('آیا از حذف این دام اطمینان دارید؟')){
-			fetch('api/animals/${id}' , {
-				method : 'delete' ,
-				body:JSON.stringify(this.animal),
-				headers: {
-					'Access-Controll-Allow-Methods' : 'DELETE , POST , GET',
-					'Accept': 'application/json',
-					'content-type' : 'aplication/json'
-				}
+			fetch('api/animals/' + id , {
+				method : 'delete'
 			})
 			.then(res => res.json())
 			.then(data => {
