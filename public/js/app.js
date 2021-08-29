@@ -2031,13 +2031,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       if (confirm('آیا از حذف این دام اطمینان دارید؟')) {
-        fetch('api/animals/${id}', {
-          method: 'delete',
-          body: JSON.stringify(this.animal),
-          headers: {
-            'Accept': 'application/json',
-            'content-type': 'aplication/json'
-          }
+        fetch('api/animals/' + id, {
+          method: 'delete'
         }).then(function (res) {
           return res.json();
         }).then(function (data) {
@@ -37756,7 +37751,7 @@ var render = function() {
               ? _c(
                   "button",
                   {
-                    staticClass: "btn btn_warning mb-2",
+                    staticClass: "btn btn-warning mb-2",
                     on: {
                       click: function($event) {
                         return _vm.editAnimal(animal)
@@ -37771,7 +37766,7 @@ var render = function() {
               ? _c(
                   "button",
                   {
-                    staticClass: "btn btn_danger ",
+                    staticClass: "btn btn-danger ",
                     on: {
                       click: function($event) {
                         return _vm.deleteAnimal(animal.id)
