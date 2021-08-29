@@ -120,6 +120,7 @@ methods:{
 				method : 'delete' ,
 				body:JSON.stringify(this.animal),
 				headers: {
+					'Access-Controll-Allow-Methods' : 'DELETE , POST , GET',
 					'Accept': 'application/json',
 					'content-type' : 'aplication/json'
 				}

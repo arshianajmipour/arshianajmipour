@@ -2035,6 +2035,7 @@ __webpack_require__.r(__webpack_exports__);
           method: 'delete',
           body: JSON.stringify(this.animal),
           headers: {
+            'Access-Controll-Allow-Methods': 'DELETE , POST , GET',
             'Accept': 'application/json',
             'content-type': 'aplication/json'
           }
