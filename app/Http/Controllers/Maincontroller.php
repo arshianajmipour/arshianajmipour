@@ -42,7 +42,7 @@ class Maincontroller extends Controller
     							// ->orWhere('jhen', 'LIKE', "%$search%")
     							->get();
     	$data = array('data' => $animals);
-    	return  redirect('dsdsd'.$req->input('search'));
+    	return $data;
     }
 
     public function getAnimals()
