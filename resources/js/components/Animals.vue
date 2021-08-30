@@ -137,9 +137,9 @@ methods:{
 	},
 	search(searched){
 		console.log(JSON.stringify({search: searched}));
-		fetch('api/animals/search' , {
-			method : 'post' ,
-			body:JSON.stringify(searched),
+		fetch('api/animals/search/' + searched , {
+			method : 'get' ,
+			// body:JSON.stringify({search: searched}),
 			headers: {
 				'Accept': 'application/json',
 				'content-type' : 'aplication/json'

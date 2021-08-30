@@ -20,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('animals','MainController@getAnimals');
 Route::post('animals','MainController@editAnimals');
 Route::delete('animals/{id}','MainController@deleteAnimals');
-Route::post('animals/search','MainController@serachAnimals');
+Route::get('animals/search/{searched}','MainController@serachAnimals');

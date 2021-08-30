@@ -33,11 +33,11 @@ class Maincontroller extends Controller
 
     }
 
-    public function serachAnimals(Request $req)
+    public function serachAnimals($searched)
     {
-    	$search = $req->input('search') ;
-    	$animals = Animal::where('pelak' ,$search)
-    							->orWhere('jensiat', "%$search%")
+    	// $search = $req->search ;
+    	$animals = Animal::where('pelak' ,$searched)
+    							->orWhere('jensiat', "%$searched%")
     							// ->orWhere('gone', 'LIKE', "%$search%")
     							// ->orWhere('jhen', 'LIKE', "%$search%")
     							->get();
