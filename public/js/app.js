@@ -1964,6 +1964,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1978,6 +1983,7 @@ __webpack_require__.r(__webpack_exports__);
         tavalod: ''
       },
       animal_id: '',
+      searched: '',
       edit: false,
       formSeen: false
     };
@@ -2000,6 +2006,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     addAnimal: function addAnimal(animal) {
       var _this2 = this;
+
+      console.log(JSON.stringify(animal));
 
       if (this.edit === true) {
         fetch('api/animals', {
@@ -2042,6 +2050,27 @@ __webpack_require__.r(__webpack_exports__);
           _this3.fetchAnimals();
         });
       }
+    },
+    search: function search(searched) {
+      var _this4 = this;
+
+      console.log(JSON.stringify({
+        search: searched
+      }));
+      fetch('api/animals/search', {
+        method: 'post',
+        body: JSON.stringify(searched),
+        headers: {
+          'Accept': 'application/json',
+          'content-type': 'aplication/json'
+        }
+      }).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        console.log(res.data);
+        _this4.searched = '';
+        _this4.animals = res.data;
+      });
     }
   },
   mounted: function mounted() {
@@ -37720,6 +37749,41 @@ var render = function() {
         _vm._v("افزودن دام جدید+")
       ]),
       _vm._v(" "),
+      _c("div", { staticClass: "searching" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searched,
+              expression: "searched"
+            }
+          ],
+          domProps: { value: _vm.searched },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searched = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-warning",
+            on: {
+              click: function($event) {
+                return _vm.search(_vm.searched)
+              }
+            }
+          },
+          [_c("i", { staticClass: "fa fa-search" }), _vm._v("جستجو")]
+        )
+      ]),
+      _vm._v(" "),
       _vm._l(_vm.animals, function(animal) {
         return _c(
           "div",
@@ -37758,7 +37822,7 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("بهروزرسانی")]
+                  [_c("i", { staticClass: "fa fa-edit" }), _vm._v("بهروزرسانی")]
                 )
               : _vm._e(),
             _vm._v(" "),
@@ -37773,7 +37837,13 @@ var render = function() {
                       }
                     }
                   },
-                  [_vm._v("حذف")]
+                  [
+                    _c("i", {
+                      staticClass: "fa fa-trash",
+                      staticStyle: { color: "white" }
+                    }),
+                    _vm._v("حذف")
+                  ]
                 )
               : _vm._e(),
             _vm._v(" "),

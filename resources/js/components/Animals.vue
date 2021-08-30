@@ -1,6 +1,11 @@
 <template>
     <div class="container">
     	<a href="newDamRegistration">افزودن دام جدید+</a>
+    	<div class = "searching">
+    		<input v-model="searched" >
+    		<button @click = "search(searched)" class="btn btn-warning"><i class="fa fa-search"></i>جستجو</button>
+    	</div>
+
     	<div class ="card card-body mb-2" v-for="animal in animals" v-bind:key="animal.id">
 
 			<h3 >    {{animal.id}}</h3>
@@ -11,9 +16,9 @@
     		<h3 v-if="formSeen !== animal.id">  ژن :{{animal.jhen}}</h3>
 
     		<button @click="editAnimal(animal)" class="btn btn-warning mb-2" 
-    		v-if="formSeen !== animal.id">بهروزرسانی</button>
+    		v-if="formSeen !== animal.id"><i class="fa fa-edit"></i>بهروزرسانی</button>
     		<button @click="deleteAnimal(animal.id)" class="btn btn-danger "
-    	    v-if="formSeen !== animal.id">حذف</button>
+    	    v-if="formSeen !== animal.id"><i class="fa fa-trash" style="color: white;"></i>حذف</button>
 
     		<form @submit.prevent="addAnimal(animal)" class="mb-3" v-if="formSeen === animal.id">
     		    <div class="form-group row">
@@ -21,7 +26,7 @@
     				<input type="number" class="form-control" v-model = "animal.pelak" id= "pelak">
     			</div>
     			<div class="form-group row">
-    				<label for ="tavallod">تاریخ تولد:   </label>
+    				<label for ="tavallod" >تاریخ تولد:   </label>
     				<input type="date" class="form-control" v-model = "animal.tavalod" id= "tavallod">
     			</div>
     			<div class="form-group row">
@@ -70,6 +75,7 @@ data: function() {
   		tavalod:''
   	},
   	animal_id:'',
+  	searched:'',
   	edit:false,
   	formSeen:false
   };
@@ -79,6 +85,7 @@ created(){
 },
 methods:{
 	fetchAnimals(){
+		
 		fetch('api/animals')
 		.then(res =>res.json())
 		.then(res => {
@@ -89,6 +96,7 @@ methods:{
 		this.formSeen = 0;
 	},
 	addAnimal(animal){
+		console.log(JSON.stringify(animal));
 		if(this.edit === true){
 			fetch('api/animals' , {
 				method : 'post' ,
@@ -126,6 +134,24 @@ methods:{
 				this.fetchAnimals();
 			});
 		}
+	},
+	search(searched){
+		console.log(JSON.stringify({search: searched}));
+		fetch('api/animals/search' , {
+			method : 'post' ,
+			body:JSON.stringify(searched),
+			headers: {
+				'Accept': 'application/json',
+				'content-type' : 'aplication/json'
+			}
+		})
+		.then(res => res.json())
+		.then(res => {
+			console.log(res.data);
+			this.searched='';
+			this.animals = res.data;
+			
+		});
 	}
 },
 

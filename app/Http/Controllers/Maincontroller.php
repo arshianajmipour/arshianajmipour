@@ -33,8 +33,21 @@ class Maincontroller extends Controller
 
     }
 
+    public function serachAnimals(Request $req)
+    {
+    	$search = $req->input('search') ;
+    	$animals = Animal::where('pelak' ,$search)
+    							->orWhere('jensiat', "%$search%")
+    							// ->orWhere('gone', 'LIKE', "%$search%")
+    							// ->orWhere('jhen', 'LIKE', "%$search%")
+    							->get();
+    	$data = array('data' => $animals);
+    	return  redirect('dsdsd'.$req->input('search'));
+    }
+
     public function getAnimals()
     {
+
     	$data = array('data' => Animal::all() );
     	return $data;
     }
