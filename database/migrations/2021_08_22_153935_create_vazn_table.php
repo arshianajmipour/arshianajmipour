@@ -16,7 +16,7 @@ class CreateVaznTable extends Migration
         Schema::create('vazn', function (Blueprint $table) {
             $table->id();
             //$table->primary('id');
-            $table->integer('pelak');
+            $table->integer('animal_id');
             $table->json("vazn");
             $table->json("tarikh");
             $table->json("tozihat");

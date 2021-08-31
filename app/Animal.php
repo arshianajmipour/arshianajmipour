@@ -16,8 +16,8 @@ class Animal extends Model
     {
         return $this->belongsTo(Gale::class, 'gale_id');
     }
-    public function vazn()
+    public function vazns()
     {
-    	return $this->hasOne(Vazn::class,'vazn_id');
+    	return $this->hasMany(Vazn::class,'animal_id');
     }
 }
