@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGaleTable extends Migration
+class CreateGalesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateGaleTable extends Migration
      */
     public function up()
     {
-        Schema::create('gale', function (Blueprint $table) {
+        Schema::create('gales', function (Blueprint $table) {
             $table->id();
             $table->string("name" , 250);
             $table->integer("salon_number");

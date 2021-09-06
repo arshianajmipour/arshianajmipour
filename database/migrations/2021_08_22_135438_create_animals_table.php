@@ -27,8 +27,8 @@ class CreateAnimalsTable extends Migration
             $table->json('chilren')->nullable();
             $table->integer('gale_id')->nullable();
             $table->foreign('gale_id')->references('gale_id')->on('gale');
-            $table->integer('vazn_id')->nullable();
-            $table->foreign('vazn_id')->references('vazn_id')->on('vazn');
+            // $table->integer('vazn_id')->nullable();
+            // $table->foreign('vazn_id')->references('vazn_id')->on('vazn');
         });
     }
 

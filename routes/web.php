@@ -29,3 +29,6 @@ Route::post('/newSalonRegistration','MainController@newSalon');
 Route::get('/damList','MainController@damList');
 Route::delete('/damDelete/{id}','Maincontroller@damDelete');
 Route::post('/damList/action','MainController@damListAction')->name('damList.action');
+Route::post('/damList/action','MainController@damListAction')->name('damList.action');
+Route::get('/weights', 'VaznkeshiController@index');
+
