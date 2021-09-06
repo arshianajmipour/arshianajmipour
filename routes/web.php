@@ -28,3 +28,6 @@ Route::get('/newSalonRegistration','MainController@newSalonRegistration');
 Route::post('/newSalonRegistration','MainController@newSalon');
 Route::get('/damList','MainController@damList');
 Route::post('/damList/action','MainController@damListAction')->name('damList.action');
+
+
+Route::get('/weights', 'VaznkeshiController@index');

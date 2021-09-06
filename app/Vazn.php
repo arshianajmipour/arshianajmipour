@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vazn extends Model
 {
-    protected $table = 'vazn';
+    protected $table = 'vazns';
     protected $casts = [
         'vazn' => 'array',
         'tarikh' => 'array',
@@ -14,7 +14,7 @@ class Vazn extends Model
     ];
     public function animal()
     {
-        return $this->belongsTo(Animal::class, 'vazn_id');
+        return $this->belongsTo(Animal::class, 'animal_id');
     }
 
 }

@@ -12,7 +12,7 @@ class Animal extends Model
     protected $casts = [
         'tavalod' => 'array'
     ];
-    public function animal()
+    public function gale()
     {
         return $this->belongsTo(Gale::class, 'gale_id');
     }

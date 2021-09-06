@@ -23,6 +23,7 @@ window.Vue = require('vue');
 
 
 Vue.component('vaznkeshi-component', require('./components/VaznkeshiComponent.vue').default);
+Vue.component('submitVaznsOfGale-component', require('./components/SubmitVaznsOfGale.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
