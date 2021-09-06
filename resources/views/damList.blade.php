@@ -2,7 +2,8 @@
 
 @section('content')
 <?php use App\Vazn;
-use App\Gale;?>
+use App\Gale;
+use App\Animal;?>
 
 
 
@@ -19,6 +20,7 @@ use App\Gale;?>
 				<th>جنسیت</th>
 				<th>وزن</th>
 				<th>گله</th>
+				<th>عملیات</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,40 +35,24 @@ use App\Gale;?>
 					<td>{{$row->jensiat}}</td>
 					<td>{{0}}</td>
 					<td>{{$row->gale_id}}</td>
+					<td>
+						<a href="damEdit/{{$row->id}}"><i class="fa fa-edit"></i></a>
+						<button onclick="deleteRow({{$row->id}})"><i class="fa fa-trash" style="color: red;"></i></button>
+					</td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
+<script type="text/javascript">
+	function deleteRow(id){
+		<?php 
+			
+			$id = "<script>document.write(id)</script>";
+			DB::table('animals')->where('id',$id)->delete();
+		 ?>
+	}
 
-	<script type="text/javascript">
+</script>
 
-		$(document).ready(function(){
-			$.ajaxSetup({
-				headers:{
-					'X-CSRF-Token' : $("input[name=_token]").val()
-				}
-			});
-			$('#editable').Tabledit({
-				url:'{{ route("damList.action")}}',
-				dataType:"json",
-				columns:{
-					identifier:[0,'id'],
-					editable : [[1,'pelak'],[2,'gone',{"boz":"بز","gosfand":"گوسفند"}]
-					,[3,'jhen',{"hetero":"هتروزیگوت","hemo":"هموزیگوت"  , "none":"هیچکدام"}]
-					,[4,'nejad'],[5,'tavalod']
-					,[6,'jensiat',{"nar":"نر","made":"ماده"}],[8,'gale']]
-				},
-				restoreButton:false,
-				onSuccess:function(data,textStatus,jqXHR){
-					if(data.action == 'delete')
-					{
-						$('#'+data.id).remove();
-					}
-				}
-			});
-	
-		});
-	</script>
-    <script scr="/js/tabledit.min.js"></script>
 
 @endsection

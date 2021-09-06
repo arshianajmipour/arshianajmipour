@@ -29,9 +29,54 @@ class Maincontroller extends Controller
     {
     	$data = DB::table('animals')->get();
  
-        return view('damList')->withData($data);
+        return view('damList2')->withData($data);
+
     }
 
+    public function serachAnimals($searched)
+    {
+    	$animals = Animal::where('pelak' ,$searched)
+    							->orWhere('jensiat', "%$searched%")
+    							// ->orWhere('gone', 'LIKE', "%$search%")
+    							// ->orWhere('jhen', 'LIKE', "%$search%")
+    							->get();
+    	$data = array('data' => $animals);
+    	return $data;
+    }
+
+    public function getAnimals()
+    {
+
+    	$data = array('data' => Animal::all() );
+    	return $data;
+    }
+
+    public function editAnimals(Request $req)
+    {
+    	$animal = Animal::where('id',$req->id)->first();
+    	$animal->pelak = $req->input('pelak');
+    	$animal->jensiat = $req->input('jensiat');
+    	$animal->tavalod = $req->input('tavalod');
+    	$animal->gone = $req->input('gone');
+    	$animal->jhen = $req->input('jhen');
+    	if($animal->save()){
+        	$data = array('data' => Animal::all() );
+    		return $data;
+    	}
+    }
+
+    public function deleteAnimals($id){
+    	$animal =Animal::findOrFail($id);
+    	$animal->pelak =123;
+    	if($animal->delete()){
+    		$data = array('data' => Animal::all() );
+    		return $data;
+    	}
+    }
+
+    public function damDelete($id){
+    	return $id;
+    }
     public function newDam(Request $req)
     {
 	    $animal=Animal::create([
@@ -40,7 +85,7 @@ class Maincontroller extends Controller
     		'jhen' => $req->input('jhen'),
     		'jensiat' => $req->input('jensiat')
 		]);
-
+	    $animal->tavalod = $req->input('tavalod');
 	    $animal->save();
 	    return redirect('newDamRegistration');
     }

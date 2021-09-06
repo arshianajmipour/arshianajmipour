@@ -20,6 +20,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('ثبت سالن') }}
                                 </button>
+                                <a href="{{ url()->previous() }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> بازگشت</a>
                             </div>
                         </div>
                     </form>
