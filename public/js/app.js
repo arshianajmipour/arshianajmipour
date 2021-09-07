@@ -2144,7 +2144,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      vazns: []
+      vazns: [],
+      tarikh_of_vazn: new Date(),
+      tozihat: ''
     };
   },
   props: {
@@ -2157,12 +2159,17 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     // console.log(this.gale);
-    var vazn_keys = Object.keys(this.gale.animals[0].vazns[0]);
+    // const vazn_keys = Object.keys(this.gale.animals[0].vazns[0]);
     this.gale.animals.forEach(function (element) {
-      var vaznObj = {};
-      vazn_keys.forEach(function (key) {
-        vaznObj[key] = '';
-      });
+      var vaznObj = {}; // vazn_keys.forEach(key => {
+      //     vaznObj[key] = {};
+      // });
+
+      vaznObj.animal_id = element.id;
+      vaznObj.vazn = {
+        kilo: '',
+        geram: ''
+      };
       _this.vazns[element.id] = vaznObj;
     });
   },
@@ -2170,6 +2177,33 @@ __webpack_require__.r(__webpack_exports__);
     getVaznOfAnimalID: function getVaznOfAnimalID(animal_id) {
       return this.vazns.find(function (element) {
         return element.animal_id == animal_id;
+      });
+    },
+    createVazns: function createVazns() {
+      var _this2 = this;
+
+      var objToBeCreated = {
+        vazns_array: JSON.stringify(this.vazns.filter(function (element) {
+          return element != null;
+        })),
+        tarikh: this.tarikh_of_vazn,
+        tozihat: this.tozihat
+      };
+      console.log(JSON.stringify(objToBeCreated));
+      fetch('api/vaznkeshi/createVazns', {
+        method: "post",
+        body: JSON.stringify(objToBeCreated),
+        headers: {
+          'Accept': 'application/json',
+          'content-type': 'application/json'
+        }
+      }).then(function (res) {
+        return res.json();
+      }).then(function (res) {
+        console.log(res);
+        alert('وزن کشی ها با موفقیت ثبت شد.');
+
+        _this2.$emit("submitSuccess");
       });
     }
   }
@@ -2186,6 +2220,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -38328,140 +38365,164 @@ var render = function() {
   return _c("div", { staticClass: "w-100" }, [
     _c("h4", [_vm._v("ثبت وزن کشی برای دام های گله " + _vm._s(_vm.gale.name))]),
     _vm._v(" "),
-    _c("form", { attrs: { action: "#" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "table-wrapper" }, [
-        _c("table", { staticClass: "w-100 table" }, [
-          _vm._m(1),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.createVazns()
+          }
+        }
+      },
+      [
+        _c("div", [
+          _c("label", { attrs: { for: "tarikh" } }, [
+            _vm._v("انتخاب تاریخ وزن کشی:")
+          ]),
           _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.gale.animals, function(animal) {
-              return _c("tr", { key: animal.id }, [
-                _c("td", [_vm._v(_vm._s(animal.pelak))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(animal.tavalod))]),
-                _vm._v(" "),
-                _c("td", [
-                  _vm.vazns.length
-                    ? _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.vazns[animal.id].vazn[0],
-                            expression: "vazns[animal.id].vazn[0]"
-                          }
-                        ],
-                        attrs: {
-                          type: "number",
-                          name: "kilo" + animal.id,
-                          id: "kilo" + animal.id,
-                          min: "0"
-                        },
-                        domProps: { value: _vm.vazns[animal.id].vazn[0] },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.vazns[animal.id].vazn,
-                              0,
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "kilo" + animal.id } }, [
-                    _vm._v("کیلو")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("td", [
-                  _vm.vazns.length
-                    ? _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.vazns[animal.id].vazn[1],
-                            expression: "vazns[animal.id].vazn[1]"
-                          }
-                        ],
-                        attrs: {
-                          type: "number",
-                          name: "geram" + animal.id,
-                          id: "geram" + animal.id,
-                          min: "0"
-                        },
-                        domProps: { value: _vm.vazns[animal.id].vazn[1] },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.vazns[animal.id].vazn,
-                              1,
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("label", { attrs: { for: "geram" + animal.id } }, [
-                    _vm._v("گرم")
-                  ])
-                ])
-              ])
-            }),
-            0
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "d-flex" }, [
-        _c(
-          "button",
-          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-          [_vm._v("\n                ثبت\n            ")]
-        ),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-secodary",
-            attrs: { type: "button" },
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.tarikh_of_vazn,
+                expression: "tarikh_of_vazn"
+              }
+            ],
+            attrs: { type: "date", name: "tarikh", id: "tarikh" },
+            domProps: { value: _vm.tarikh_of_vazn },
             on: {
-              click: function($event) {
-                return _vm.$emit("close")
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.tarikh_of_vazn = $event.target.value
               }
             }
-          },
-          [_vm._v("\n                برگشت\n            ")]
-        )
-      ])
-    ])
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-wrapper" }, [
+          _c("table", { staticClass: "w-100 table" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.gale.animals, function(animal) {
+                return _c("tr", { key: animal.id }, [
+                  _c("td", [_vm._v(_vm._s(animal.pelak))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(animal.tavalod))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm.vazns.length
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.vazns[animal.id].vazn.kilo,
+                              expression: "vazns[animal.id].vazn.kilo"
+                            }
+                          ],
+                          attrs: {
+                            type: "number",
+                            name: "kilo" + animal.id,
+                            id: "kilo" + animal.id,
+                            min: "0"
+                          },
+                          domProps: { value: _vm.vazns[animal.id].vazn.kilo },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.vazns[animal.id].vazn,
+                                "kilo",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "kilo" + animal.id } }, [
+                      _vm._v("کیلو")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm.vazns.length
+                      ? _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.vazns[animal.id].vazn.geram,
+                              expression: "vazns[animal.id].vazn.geram"
+                            }
+                          ],
+                          attrs: {
+                            type: "number",
+                            name: "geram" + animal.id,
+                            id: "geram" + animal.id,
+                            min: "0"
+                          },
+                          domProps: { value: _vm.vazns[animal.id].vazn.geram },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.vazns[animal.id].vazn,
+                                "geram",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "geram" + animal.id } }, [
+                      _vm._v("گرم")
+                    ])
+                  ])
+                ])
+              }),
+              0
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "d-flex" }, [
+          _c(
+            "button",
+            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+            [_vm._v("\n                ثبت\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-secodary",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.$emit("close")
+                }
+              }
+            },
+            [_vm._v("\n                برگشت\n            ")]
+          )
+        ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("label", { attrs: { for: "tarikh" } }, [
-        _vm._v("انتخاب تاریخ وزن کشی:")
-      ]),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "date", name: "tarikh", id: "tarikh" } })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -38554,6 +38615,9 @@ var render = function() {
                     on: {
                       close: function($event) {
                         _vm.show_submitVaznsOfGale_modal = false
+                      },
+                      submitSuccess: function($event) {
+                        return _vm.fetchGales()
                       }
                     }
                   })

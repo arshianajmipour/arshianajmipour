@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Vazn extends Model
 {
+    protected $fillable = ['animal_id', 'vazn', 'tarikh', 'tozihat'];
+    protected $guarded = [];
     protected $table = 'vazns';
     protected $casts = [
         'vazn' => 'array',
-        'tarikh' => 'array',
         'tozihat' => 'array',
     ];
     public function animal()

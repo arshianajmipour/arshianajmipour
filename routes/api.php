@@ -22,4 +22,6 @@ Route::get('animals','MainController@getAnimals');
 Route::post('animals','MainController@editAnimals');
 Route::delete('animals/{id}','MainController@deleteAnimals');
 Route::get('animals/search/{searched}','MainController@serachAnimals');
+
 Route::get('getGales', 'GaleController@getGales');
+Route::post('vaznkeshi/createVazns', 'VaznkeshiController@createVazns');
