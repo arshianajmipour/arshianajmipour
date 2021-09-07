@@ -87,6 +87,7 @@ class Maincontroller extends Controller
     		'jensiat' => $req->input('jensiat')
 		]);
 	    $animal->tavalod = $req->input('tavalod');
+	    $animal->gale_id = $req->input('gale');
 	    $animal->save();
 	    return redirect('newDamRegistration');
     }
