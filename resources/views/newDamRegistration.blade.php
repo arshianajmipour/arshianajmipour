@@ -47,7 +47,7 @@
                             <label for="gale" class="col-md-4 col-form-label text-md-right">{{ __('گله') }}</label>
 
                             <div class="col-md-6">
-                                <input id="gale" >
+                                <input id="gale" name="gale">
                             </div>
                         </div>                                              
                         <div class="form-group row">

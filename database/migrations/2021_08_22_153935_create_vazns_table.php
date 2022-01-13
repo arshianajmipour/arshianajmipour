@@ -18,7 +18,7 @@ class CreateVaznsTable extends Migration
             //$table->primary('id');
             $table->integer('animal_id');
             $table->json("vazn");
-            $table->json("tarikh");
+            $table->date("tarikh");
             $table->json("tozihat")->nullable();
             $table->timestamps();
         });

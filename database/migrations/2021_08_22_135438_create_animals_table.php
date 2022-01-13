@@ -23,6 +23,8 @@ class CreateAnimalsTable extends Migration
             $table->string('nejad')->nullable();
             $table->enum('jhen', ['hetero', 'hemo','none']);
             $table->enum('gone', ['boz', 'gosfand']);
+            $table->json('parents')->nullable();
+            $table->json('chilren')->nullable();
             $table->integer('gale_id')->nullable();
             $table->foreign('gale_id')->references('gale_id')->on('gale');
             // $table->integer('vazn_id')->nullable();

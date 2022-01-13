@@ -16,7 +16,10 @@
         <div class="modal-mask" v-if="show_submitVaznsOfGale_modal">
             <div class="modal-wrapper">
                 <div class="modal-container">
-                     <submitVaznsOfGale-component v-bind:gale="current_gale" @close="show_submitVaznsOfGale_modal=false"></submitVaznsOfGale-component>
+                     <submitVaznsOfGale-component v-bind:gale="current_gale"
+                      @close="show_submitVaznsOfGale_modal=false"
+                      @submitSuccess="fetchGales()">
+                      </submitVaznsOfGale-component>
                 </div>
                
             </div>

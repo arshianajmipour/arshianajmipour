@@ -2,10 +2,10 @@
     <div class="w-100">
         <h4>ثبت وزن کشی برای دام های گله {{ gale.name }}</h4>
 
-        <form action="#">
+        <form @submit.prevent="createVazns()">
             <div>
                 <label for="tarikh">انتخاب تاریخ وزن کشی:</label>
-                <input type="date" name="tarikh" id="tarikh" />
+                <input type="date" name="tarikh" id="tarikh" v-model="tarikh_of_vazn"/>
             </div>
             <div class="table-wrapper">
                 <table class="w-100 table">
@@ -23,14 +23,14 @@
                             <td>
                                 <input type="number" :name="'kilo'+animal.id" :id="'kilo'+animal.id" min="0"
                                 v-if="vazns.length"
-                                v-model="vazns[animal.id].vazn[0]"
+                                v-model="vazns[animal.id].vazn.kilo"
                                 >
                                 <label :for="'kilo'+animal.id">کیلو</label>
                             </td>
                             <td>
                                 <input type="number" :name="'geram'+animal.id" :id="'geram'+animal.id" min="0"
                                 v-if="vazns.length"
-                                v-model="vazns[animal.id].vazn[1]"
+                                v-model="vazns[animal.id].vazn.geram"
                                 >
                                 <label :for="'geram'+animal.id">گرم</label>
                             </td>
@@ -56,6 +56,8 @@ export default {
     data() {
         return {
             vazns: [],
+            tarikh_of_vazn: new Date,
+            tozihat: '',
         }
     },
 
@@ -68,14 +70,16 @@ export default {
 
     created() {
         // console.log(this.gale);
-        const vazn_keys = Object.keys(this.gale.animals[0].vazns[0]);
+        // const vazn_keys = Object.keys(this.gale.animals[0].vazns[0]);
 
         this.gale.animals.forEach(element => {
 
             let vaznObj = {};
-            vazn_keys.forEach(key => {
-                vaznObj[key] = '';
-            });
+            // vazn_keys.forEach(key => {
+            //     vaznObj[key] = {};
+            // });
+            vaznObj.animal_id = element.id;
+            vaznObj.vazn = {kilo: '', geram: ''};
 
             this.vazns[element.id] = vaznObj;
         });
@@ -86,7 +90,33 @@ export default {
         getVaznOfAnimalID(animal_id)
         {
             return this.vazns.find(element => element.animal_id == animal_id);
-        }
+        },
+
+        createVazns()
+        {
+            const objToBeCreated = {
+                vazns_array: JSON.stringify(this.vazns.filter(element => element != null)),
+                tarikh: this.tarikh_of_vazn,
+                tozihat: this.tozihat,
+            };
+
+            console.log(JSON.stringify(objToBeCreated));
+
+            fetch('api/vaznkeshi/createVazns', {
+                method: "post",
+                body: JSON.stringify(objToBeCreated),
+                headers: {
+					'Accept': 'application/json',
+					'content-type' : 'application/json'
+				}
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                alert('وزن کشی ها با موفقیت ثبت شد.');
+                this.$emit("submitSuccess");
+            });
+        },
     },
 }
 </script>

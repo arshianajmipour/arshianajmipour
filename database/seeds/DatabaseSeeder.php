@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -51,7 +52,7 @@ class SimpleAnimalSeeder extends Seeder {
             DB::table('animals')->insert(
                 array(
                     'pelak' => $i,
-                    'tavalod' => '[1400, 1, 1]',
+                    'tavalod' => Carbon::create('2000', '01', '01'),
                     // 'gone' => '0',
                     // 'jhen' => '0',
                     'gale_id' => 1,
@@ -68,7 +69,7 @@ class SimpleVaznSeeder extends Seeder {
                 array(
                     'animal_id' => $i,
                     'vazn' => '[4, 200]',
-                    'tarikh' => '[1400, 2, 1]',
+                    'tarikh' => Carbon::create('2000', '01', '01'),
                 )
             );
 	}
