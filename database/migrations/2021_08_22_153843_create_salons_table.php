@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVaznTable extends Migration
+class CreateSalonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateVaznTable extends Migration
      */
     public function up()
     {
-        Schema::create('vazn', function (Blueprint $table) {
+        Schema::create('salons', function (Blueprint $table) {
             $table->id();
-            //$table->primary('id');
-            $table->integer('pelak');
-            $table->json("vazn");
-            $table->json("tarikh");
-            $table->json("tozihat");
+            $table->integer("salon_number")->unique();           
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateVaznTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vazn');
+        Schema::dropIfExists('salon');
     }
 }

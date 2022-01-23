@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Salon extends Model
 {
-    protected $table = 'salon';
+    protected $table = 'salons';
     protected $guarded = array();    
     public function gales()
     {

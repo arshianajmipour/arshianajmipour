@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gale extends Model
 {
-    protected $table = 'gale';
+    protected $table = 'gales';
     protected $guarded = array();    
     public function animals()
     {
