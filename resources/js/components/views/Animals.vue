@@ -109,7 +109,7 @@ methods:{
 			.then(res => res.json())
 			.then(data => {
 				this.formSeen=0;
-				alert('اطلاعات دا بروزرسانی شد.');
+				alert('اطلاعات دام بروزرسانی شد.');
 				this.fetchAnimals();
 			});
 		}

@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('animals','MainController@getAnimals');
 Route::post('animals','MainController@editAnimals');
+Route::post('AddNewAnimals','MainController@addNewAnimals');
 Route::delete('animals/{id}','MainController@deleteAnimals');
 Route::get('animals/search/{searched}','MainController@serachAnimals');
 

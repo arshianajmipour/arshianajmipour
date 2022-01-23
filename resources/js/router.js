@@ -26,7 +26,12 @@ export default new Router({
                         {
                             name: 'Animals',
                             path: 'Animals',
-                            component: () => import('./views/dashboard/component/Notifications'),
+                            component: () => import('./components/views/Animals'),
+                        },
+                        {
+                          name:'newDamRegistration',
+                          path:'newDamRegistration',
+                          component: () =>import('./components/views/newDamRegistration'),
                         },
                         {
                             name: 'Flocks',
