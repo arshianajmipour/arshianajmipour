@@ -29,8 +29,6 @@
 
 </head>
 <body>
-    <div id="app">
-        <v-app app>
         {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -85,8 +83,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-        </v-app>
-    </div>
     
     <script src="{{ mix('js/app.js') }}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/newDamRegistration','MainController@newDamRegistration');
@@ -35,4 +35,8 @@ Route::delete('/damDelete/{id}','Maincontroller@damDelete');
 Route::post('/damList/action','MainController@damListAction')->name('damList.action');
 
 
-Route::get('/weights', 'VaznkeshiController@index');
+// Route::get('/weights', 'VaznkeshiController@index');
+
+Route::get('/{vue_capture?}', function () {
+    return view('Index');
+  })->where('vue_capture', '[\/\w\.-]*');

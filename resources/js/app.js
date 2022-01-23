@@ -11,10 +11,22 @@ Vue.config.ignoredElements = [
     /^ion-/
 ]
 
-import vuetify from './vuetify'
+Vue.config.productionTip = false
 
-Vue.component('dashboard-component', require('./components/Dashboard.vue').default);
+import App from './App.vue'
+import './plugins/base'
+import vuetify from './plugins/vuetify'
+import router from './router'
+import store from './store'
+import i18n from './i18n'
+
+
+Vue.component('dashboard-component', require('./components/views/Dashboard.vue').default);
 
 new Vue({
-    vuetify
+    vuetify,
+    router,
+    store,
+    i18n,
+    render: h => h(App),
 }).$mount('#app');
