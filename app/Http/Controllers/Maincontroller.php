@@ -14,6 +14,19 @@ class Maincontroller extends Controller
     {
         return view('newDamRegistration');
     }
+	public function addNewAnimals(Request $req)
+    {
+		$animal=Animal::create([
+    		'pelak' => $req->input('pelak'),
+    		'gone' => $req->input('gone').v,
+    		'jhen' => $req->input('jhen').v,
+    		'jensiat' => $req->input('jensiat').v,
+		]);
+	    $animal->tavalod = $req->input('tavalod');
+	    $animal->gale_id = $req->input('gale');
+	    $animal->save();
+	    return redirect('newDamRegistration');
+    }
 
     public function newGaleRegistration()
     {

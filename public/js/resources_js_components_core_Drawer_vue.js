@@ -124,7 +124,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         icon: 'mdi-view-dashboard',
         title: 'تعریف موجودیت',
         // to: '/',
-        group: '/Entities',
+        group: '',
         children: [{
           icon: 'mdi-view-dashboard',
           title: 'تعریف دام',
@@ -149,6 +149,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           icon: 'mdi-view-dashboard',
           title: 'تعریف سالن',
           to: 'Salons'
+        }]
+      }, {
+        icon: 'mdi-view-dashboard',
+        title: "عملیات های دام",
+        // to: '/',
+        group: '',
+        children: [{
+          icon: 'mdi-view-dashboard',
+          title: 'عملیات وزن کشی',
+          to: 'weights'
         }]
       }, {
         icon: 'mdi-account',

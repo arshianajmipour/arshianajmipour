@@ -110,7 +110,7 @@
           icon: 'mdi-view-dashboard',
           title: 'تعریف موجودیت',
           // to: '/',
-          group: '/Entities',
+          group: '',
           children: [
             {
               icon: 'mdi-view-dashboard',
@@ -143,6 +143,21 @@
               to: 'Salons',
             },
           ],
+           
+        },
+        {
+          icon: 'mdi-view-dashboard',
+          title: "عملیات های دام",
+          // to: '/',
+          group: '',
+          children: [
+            {
+              icon: 'mdi-view-dashboard',
+              title: 'عملیات وزن کشی',
+              to: 'weights',
+            },
+          ],
+           
         },
         {
           icon: 'mdi-account',

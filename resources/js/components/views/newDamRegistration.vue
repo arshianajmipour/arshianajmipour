@@ -1,74 +1,113 @@
 <template>
-              <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="/newDamRegistration">
-                        @csrf
+
+<div>
+<v-card
+     class="mx-auto"
+    max-width="1000"
+    color=#F9F9F9
+>
+<v-card-title style="
+    background-color: black;
+    color : white;
+">    
+    <h2 >ثبت اطلاعات دام جدید</h2>
+</v-card-title>
+<v-card-text>              
+
+                <div class="card-body" >
+                    <v-form @submit.prevent="addAnimal(animal)" class="px-3" lazy-validation ref="form">
+                        
 
                         <div class="form-group row">
-                            <label for="pelak" class="col-md-4 col-form-label text-md-right">{{ __('شماره پلاک') }}</label>
-
                             <div class="col-md-6">
-                                <input id="pelak" type="number" name="pelak" v-model = "animal.pelak">
+                                <v-text-field 
+                                 type="number" label= "شماره پلاک دام جدبد" v-model = "animal.pelak"
+                                 width="100%"
+                                 :rules="pelakRules"
+                                 required>
+                                 </v-text-field>
                             </div>
                         </div>
-
+                        <date-picker ></date-picker>
                         <div class="form-group row">
-                            <label for="tavalod" class="col-md-4 col-form-label text-md-right">{{ __('تاریخ تولد') }}</label>
 
                             <div class="col-md-6">
-                                <input id="tavalod" type="date" name="tavalod" v-model = "animal.tavalod">
+                                <v-text-field type="date" label="تاریخ تولد" name="tavalod" v-model = "animal.tavalod" is-inline  />
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="gone" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
-
                             <div class="col-md-6">
-                                <select id="gone" name="gone" v-model = "animal.gone">
-                                	<option value="boz">بز</option>
-                                	<option value="gosfand">گوسفتد</option>
-                                </select>
+                                <v-select
+                                      v-model="animal.gone"
+                                     label = "گونه دام"
+                                     :items="itemsgone"
+                                      item-text="t"
+                                      item-value="v"
+                                       persistent-hint
+                                      return-object
+                                      required
+                                      :rules="[v => !!v || 'ورود گونه دام الزامی است']"
+                                ></v-select>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="jensiat" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
-
                             <div class="col-md-6">
-                                <select id="jensiat" name="jensiat" v-model = "animal.jensiat">
-                                	<option value="nar">نر</option>
-                                	<option value="made">ماده</option>
-                                </select>
+                                <v-select
+                                  v-model="animal.jensiat"
+                                  :items="itemsjensiat"
+                                  item-text="t"
+                                  item-value="v"
+                                  label="جنسیت دام"
+                                  persistent-hint
+                                  return-object
+                                  required
+                                  :rules="[v => !!v || 'ورود جنسیت دام الزامی است']"
+                                ></v-select>
                             </div>
 
                         </div>  
                         <div class="form-group row">
-                            <label for="gale" class="col-md-4 col-form-label text-md-right">{{ __('گله') }}</label>
-
                             <div class="col-md-6">
-                                <input id="gale" name="gale" v-model = "animal.gale">
+                                <v-text-field 
+                                 type="number" label= "گله دام جدید" v-model = "animal.gale"
+                                 width="100%">
+                                 </v-text-field>
                             </div>
-                        </div>                                              
+                        </div>                                          
                         <div class="form-group row">
-                            <label for="jhen" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
 
                             <div class="col-md-6">
-                                <select id="jhen" name="jhen" v-model = "animal.jhen">
-                                	<option value="hetero">هتروزیگوت </option>
-                                	<option value="hemo">هموزیگوت </option>
-                                	<option value="none">هیچکدام </option>
-                                </select>
-                            </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary" @click="addAnimal(animal)">
-                                    {{ __('ثبت دام') }}
-                                </button>
-                                <a href="{{ url()->previous() }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> بازگشت</a>
+                                <v-select
+                                  v-model="animal.jhen"
+                                    :items="itemsjhen"
+                                    item-text="t"
+                                    item-value="v"
+                                     label="ژن دام "
+                                     persistent-hint
+                                      return-object
+                                ></v-select>
                             </div>
                         </div>
-                    </form>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                        <v-btn
+                                             color="#1D1D66"
+                                              dark
+                                              large
+                                              @click = "addAnimal(animal)"
+                                        >
+                                              ثبت دام
+                                        </v-btn> 
+                                <!-- <a href="" class="btn btn-warning"><i class="fa fa-angle-left"></i> بازگشت</a> -->
+                            </div>
+                        </div>
+                    </v-form>
                 </div>
+</v-card-text>
+</v-card>
             </div>
+
 </template>
 <script>
     export default {
@@ -85,6 +124,16 @@
               jhen:'',
               tavalod:''
           },
+          itemsgone: [{v:'boz', t:'بز'},{v:'gosfand', t:'گوسفند'} ],
+          itemsjensiat: [{v:'nar', t:'نر'},{v:'made', t:'ماده'} ],
+          itemsjhen: [{v:'hetero', t:'هتروزیگوت'},{v:'hemo', t:'هموزیگوت'},{v:'none', t:'هیچکدام'} ],
+          pelakRules: [
+            v => !!v || 'ورود پلاک الزامی است',
+            v => !(/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(v)) ||  'پلاک باید عددی باشد',
+         ],
+        inputRules: [
+            v => !!v || 'ورود پلاک الزامی است', 
+         ]
 
       };
     },
@@ -95,7 +144,8 @@
 
         addAnimal(animal){
             console.log(JSON.stringify(animal));
-            if(this.edit === true){
+            this.$refs.form.validate();
+            
                 fetch('api/AddNewAnimals' , {
                     method : 'post' ,
                     body:JSON.stringify(animal),
@@ -104,13 +154,8 @@
                         'content-type' : 'aplication/json'
                     }
                 })
-                .then(res => res.json())
-                .then(data => {
-                    this.formSeen=0;
-                    alert('اطلاعات دام بروزرسانی شد.');
-                    this.fetchAnimals();
-                });
-            }
+                .then(res => res.json());
+            
         },
 
     },
