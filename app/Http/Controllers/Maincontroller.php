@@ -91,7 +91,7 @@ class Maincontroller extends Controller
     public function damDelete($id){
     	return $id;
     }
-    public function addNewAnimals(Request $req)
+    public function newDam(Request $req)
     {
 	    $animal=Animal::create([
     		'pelak' => $req->input('pelak'),

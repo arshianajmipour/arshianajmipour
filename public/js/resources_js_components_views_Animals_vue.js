@@ -271,8 +271,8 @@ var render = function () {
     "div",
     { staticClass: "container" },
     [
-      _c("a", { attrs: { href: "newDamRegistration" } }, [
-        _vm._v("افزودن دام جدید+"),
+      _c("router-link", { attrs: { to: "/newDamRegistration" } }, [
+        _c("a", [_vm._v("افزودن دام جدید+")]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "searching" }, [
