@@ -20,7 +20,7 @@ export default new Router({
 
                 {
                     name: 'Entities',
-                    path: 'Entities',
+                    path: '',
                     component: () => import('./components/views/EntitiesBase'),
                     children: [
                         {
@@ -60,7 +60,19 @@ export default new Router({
                         },
                     ],
                 },
+                {
+                  name: 'operations',
+                  path: '',
+                  component: () => import('./components/views/EntitiesBase'),
+                  children: [
+                      {
+                          name: 'vaznkeshi',
+                          path: 'weights',
+                          component: () => import('./components/views/VaznkeshiComponent'),
+                      },
 
+                  ],
+              },
                 // Pages
                 {
                   name: 'User Profile',

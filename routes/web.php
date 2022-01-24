@@ -24,8 +24,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/newDamRegistration','MainController@newDamRegistration');
-Route::post('/newDamRegistration','MainController@newDam');
+//Route::get('/newDamRegistration','MainController@newDamRegistration');
+//Route::post('/newDamRegistration','MainController@newDam');
 Route::get('/newGaleRegistration','MainController@newGaleRegistration');
 Route::post('/newGaleRegistration','MainController@newGale');
 Route::get('/newSalonRegistration','MainController@newSalonRegistration');

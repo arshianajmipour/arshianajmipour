@@ -85,6 +85,46 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
+=======
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> 6e4c42ab610d221aaa9251fbcb042502fe1e3874
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -96,16 +136,53 @@ __webpack_require__.r(__webpack_exports__);
         nejad: '',
         jhen: '',
         tavalod: ''
-      }
+      },
+      itemsgone: [{
+        v: 'boz',
+        t: 'بز'
+      }, {
+        v: 'gosfand',
+        t: 'گوسفند'
+      }],
+      itemsjensiat: [{
+        v: 'nar',
+        t: 'نر'
+      }, {
+        v: 'made',
+        t: 'ماده'
+      }],
+      itemsjhen: [{
+        v: 'hetero',
+        t: 'هتروزیگوت'
+      }, {
+        v: 'hemo',
+        t: 'هموزیگوت'
+      }, {
+        v: 'none',
+        t: 'هیچکدام'
+      }],
+      pelakRules: [function (v) {
+        return !!v || 'ورود پلاک الزامی است';
+      }, function (v) {
+        return !/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(v) || 'پلاک باید عددی باشد';
+      }],
+      inputRules: [function (v) {
+        return !!v || 'ورود پلاک الزامی است';
+      }]
     };
   },
   created: function created() {},
   methods: {
     addAnimal: function addAnimal(animal) {
+<<<<<<< HEAD
       var _this = this;
 
       console.log(JSON.stringify(animal)); // if(this.edit === true){
 
+=======
+      console.log(JSON.stringify(animal));
+      this.$refs.form.validate();
+>>>>>>> 6e4c42ab610d221aaa9251fbcb042502fe1e3874
       fetch('api/AddNewAnimals', {
         method: 'post',
         body: JSON.stringify(animal),
@@ -115,12 +192,16 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (res) {
         return res.json();
+<<<<<<< HEAD
       }).then(function (data) {
         _this.formSeen = 0;
         alert('اطلاعات دام بروزرسانی شد.');
 
         _this.fetchAnimals();
       }); // }
+=======
+      });
+>>>>>>> 6e4c42ab610d221aaa9251fbcb042502fe1e3874
     }
   },
   mounted: function mounted() {
@@ -214,6 +295,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+<<<<<<< HEAD
   return _c("div", [
     _c("div", { staticClass: "card-header" }, [_vm._v("Login")]),
     _vm._v(" "),
@@ -523,6 +605,253 @@ var staticRenderFns = [
     ])
   },
 ]
+=======
+  return _c(
+    "div",
+    [
+      _c(
+        "v-card",
+        {
+          staticClass: "mx-auto",
+          attrs: { "max-width": "1000", color: "#F9F9F9" },
+        },
+        [
+          _c(
+            "v-card-title",
+            { staticStyle: { "background-color": "black", color: "white" } },
+            [_c("h2", [_vm._v("ثبت اطلاعات دام جدید")])]
+          ),
+          _vm._v(" "),
+          _c("v-card-text", [
+            _c(
+              "div",
+              { staticClass: "card-body" },
+              [
+                _c(
+                  "v-form",
+                  {
+                    ref: "form",
+                    staticClass: "px-3",
+                    attrs: { "lazy-validation": "" },
+                    on: {
+                      submit: function ($event) {
+                        $event.preventDefault()
+                        return _vm.addAnimal(_vm.animal)
+                      },
+                    },
+                  },
+                  [
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-6" },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              type: "number",
+                              label: "شماره پلاک دام جدبد",
+                              width: "100%",
+                              rules: _vm.pelakRules,
+                              required: "",
+                            },
+                            model: {
+                              value: _vm.animal.pelak,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.animal, "pelak", $$v)
+                              },
+                              expression: "animal.pelak",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("date-picker"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-6" },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              type: "date",
+                              label: "تاریخ تولد",
+                              name: "tavalod",
+                              "is-inline": "",
+                            },
+                            model: {
+                              value: _vm.animal.tavalod,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.animal, "tavalod", $$v)
+                              },
+                              expression: "animal.tavalod",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-6" },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              label: "گونه دام",
+                              items: _vm.itemsgone,
+                              "item-text": "t",
+                              "item-value": "v",
+                              "persistent-hint": "",
+                              "return-object": "",
+                              required: "",
+                              rules: [
+                                function (v) {
+                                  return !!v || "ورود گونه دام الزامی است"
+                                },
+                              ],
+                            },
+                            model: {
+                              value: _vm.animal.gone,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.animal, "gone", $$v)
+                              },
+                              expression: "animal.gone",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-6" },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              items: _vm.itemsjensiat,
+                              "item-text": "t",
+                              "item-value": "v",
+                              label: "جنسیت دام",
+                              "persistent-hint": "",
+                              "return-object": "",
+                              required: "",
+                              rules: [
+                                function (v) {
+                                  return !!v || "ورود جنسیت دام الزامی است"
+                                },
+                              ],
+                            },
+                            model: {
+                              value: _vm.animal.jensiat,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.animal, "jensiat", $$v)
+                              },
+                              expression: "animal.jensiat",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-6" },
+                        [
+                          _c("v-text-field", {
+                            attrs: {
+                              type: "number",
+                              label: "گله دام جدید",
+                              width: "100%",
+                            },
+                            model: {
+                              value: _vm.animal.gale,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.animal, "gale", $$v)
+                              },
+                              expression: "animal.gale",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-6" },
+                        [
+                          _c("v-select", {
+                            attrs: {
+                              items: _vm.itemsjhen,
+                              "item-text": "t",
+                              "item-value": "v",
+                              label: "ژن دام ",
+                              "persistent-hint": "",
+                              "return-object": "",
+                            },
+                            model: {
+                              value: _vm.animal.jhen,
+                              callback: function ($$v) {
+                                _vm.$set(_vm.animal, "jhen", $$v)
+                              },
+                              expression: "animal.jhen",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row mb-0" }, [
+                      _c(
+                        "div",
+                        { staticClass: "col-md-8 offset-md-4" },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: { color: "#1D1D66", dark: "", large: "" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.addAnimal(_vm.animal)
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\r\n                                              ثبت دام\r\n                                        "
+                              ),
+                            ]
+                          ),
+                        ],
+                        1
+                      ),
+                    ]),
+                  ],
+                  1
+                ),
+              ],
+              1
+            ),
+          ]),
+        ],
+        1
+      ),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+>>>>>>> 6e4c42ab610d221aaa9251fbcb042502fe1e3874
 render._withStripped = true
 
 
