@@ -1,12 +1,13 @@
 <template>
-              <div class="card-header">{{ __('Login') }}</div>
+<div>
+              <div class="card-header">Login</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/newDamRegistration">
-                        @csrf
+                    <form @submit.prevent="addAnimal(animal)">
+                        <!-- @csrf -->
 
                         <div class="form-group row">
-                            <label for="pelak" class="col-md-4 col-form-label text-md-right">{{ __('شماره پلاک') }}</label>
+                            <label for="pelak" class="col-md-4 col-form-label text-md-right">شماره پلاک}</label>
 
                             <div class="col-md-6">
                                 <input id="pelak" type="number" name="pelak" v-model = "animal.pelak">
@@ -14,14 +15,14 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tavalod" class="col-md-4 col-form-label text-md-right">{{ __('تاریخ تولد') }}</label>
+                            <label for="tavalod" class="col-md-4 col-form-label text-md-right">تاریخ تولد</label>
 
                             <div class="col-md-6">
                                 <input id="tavalod" type="date" name="tavalod" v-model = "animal.tavalod">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="gone" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
+                            <label for="gone" class="col-md-4 col-form-label text-md-right">گونه دام</label>
 
                             <div class="col-md-6">
                                 <select id="gone" name="gone" v-model = "animal.gone">
@@ -31,7 +32,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="jensiat" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
+                            <label for="jensiat" class="col-md-4 col-form-label text-md-right">گونه دام</label>
 
                             <div class="col-md-6">
                                 <select id="jensiat" name="jensiat" v-model = "animal.jensiat">
@@ -42,14 +43,14 @@
 
                         </div>  
                         <div class="form-group row">
-                            <label for="gale" class="col-md-4 col-form-label text-md-right">{{ __('گله') }}</label>
+                            <label for="gale" class="col-md-4 col-form-label text-md-right">گله</label>
 
                             <div class="col-md-6">
                                 <input id="gale" name="gale" v-model = "animal.gale">
                             </div>
                         </div>                                              
                         <div class="form-group row">
-                            <label for="jhen" class="col-md-4 col-form-label text-md-right">{{ __('گونه دام') }}</label>
+                            <label for="jhen" class="col-md-4 col-form-label text-md-right">گونه دام</label>
 
                             <div class="col-md-6">
                                 <select id="jhen" name="jhen" v-model = "animal.jhen">
@@ -58,17 +59,18 @@
                                 	<option value="none">هیچکدام </option>
                                 </select>
                             </div>
+                        </div>    
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary" @click="addAnimal(animal)">
-                                    {{ __('ثبت دام') }}
+                                <button type="submit" class="btn btn-primary">
+                                    ثبت دام
                                 </button>
-                                <a href="{{ url()->previous() }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> بازگشت</a>
+                                <!-- <a href="{{ url()->previous() }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> بازگشت</a> -->
                             </div>
                         </div>
                     </form>
                 </div>
-            </div>
+</div>
 </template>
 <script>
     export default {
@@ -95,7 +97,7 @@
 
         addAnimal(animal){
             console.log(JSON.stringify(animal));
-            if(this.edit === true){
+            // if(this.edit === true){
                 fetch('api/AddNewAnimals' , {
                     method : 'post' ,
                     body:JSON.stringify(animal),
@@ -110,7 +112,7 @@
                     alert('اطلاعات دام بروزرسانی شد.');
                     this.fetchAnimals();
                 });
-            }
+            // }
         },
 
     },
