@@ -182,6 +182,10 @@ __webpack_require__.r(__webpack_exports__);
       searched: '',
       edit: false,
       formSeen: false,
+      forEditing: {
+        v: '',
+        t: ''
+      },
       itemsgone: [{
         v: 'boz',
         t: 'بز'

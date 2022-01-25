@@ -171,6 +171,7 @@ data: function() {
   	searched:'',
   	edit:false,
   	formSeen:false,
+	forEditing:{ v : '' , t : ''},
 	itemsgone: [{v:'boz', t:'بز'},{v:'gosfand', t:'گوسفند'} ],
     itemsjensiat: [{v:'nar', t:'نر'},{v:'made', t:'ماده'} ],
     itemsjhen: [{v:'hetero', t:'هتروزیگوت'},{v:'hemo', t:'هموزیگوت'},{v:'none', t:'هیچکدام'} ],

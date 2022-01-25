@@ -77,6 +77,8 @@ class Maincontroller extends Controller
         	$data = array('data' => Animal::all() );
     		return $data;
     	}
+		
+
     }
 
     public function deleteAnimals($id){
