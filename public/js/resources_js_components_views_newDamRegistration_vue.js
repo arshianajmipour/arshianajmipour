@@ -289,7 +289,11 @@ var render = function () {
           _c(
             "v-card-title",
             { staticStyle: { "background-color": "black", color: "white" } },
-            [_c("h2", [_vm._v("ثبت اطلاعات دام جدید")])]
+            [
+              _c("h2", { staticClass: "text-center" }, [
+                _vm._v("ثبت اطلاعات دام جدید"),
+              ]),
+            ]
           ),
           _vm._v(" "),
           _c("v-card-text", [

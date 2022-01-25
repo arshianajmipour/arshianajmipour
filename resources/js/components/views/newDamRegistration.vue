@@ -11,7 +11,7 @@
     background-color: black;
     color : white;
 ">    
-    <h2 >ثبت اطلاعات دام جدید</h2>
+    <h2  class="text-center">ثبت اطلاعات دام جدید</h2>
 </v-card-title>
 <v-card-text>              
 

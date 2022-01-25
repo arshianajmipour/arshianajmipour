@@ -18,9 +18,9 @@ class Maincontroller extends Controller
     {
 		$animal=Animal::create([
     		'pelak' => $req->input('pelak'),
-    		'gone' => $req->input('gone').v,
-    		'jhen' => $req->input('jhen').v,
-    		'jensiat' => $req->input('jensiat').v,
+    		'gone' => $req->input('gone')="boz",
+    		'jhen' => $req->input('jhen')="none",
+    		'jensiat' => $req->input('jensiat')="nar",
 		]);
 	    $animal->tavalod = $req->input('tavalod');
 	    $animal->gale_id = $req->input('gale');

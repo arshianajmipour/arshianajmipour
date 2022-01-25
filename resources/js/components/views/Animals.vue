@@ -160,3 +160,10 @@ mounted() {
   }
 }
 </script>
+<style scoped>
+#entityform {
+  text-align: center;
+}
+
+
+</style>
