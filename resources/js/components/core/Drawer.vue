@@ -1,4 +1,5 @@
 <template>
+
   <v-navigation-drawer
     id="core-navigation-drawer"
     v-model="drawer"
@@ -8,7 +9,7 @@
     :src="barImage"
     mobile-break-point="960"
     app
-    width="260"
+    width="300"
     v-bind="$attrs"
   >
     <template #img="props">
@@ -38,7 +39,7 @@
 
         <v-list-item-content>
           <v-list-item-title
-            class="text-h5"
+            style="font-size: large;"
             v-text="profile.title"
           />
         </v-list-item-content>
@@ -47,36 +48,38 @@
 
     <v-divider class="mb-2" />
 
-    <v-list
-      expand
-      nav
-    >
-      <!-- Style cascading bug  -->
-      <!-- https://github.com/vuetifyjs/vuetify/pull/8574 -->
-      <div />
+    
+      <v-list
+        expand
+        nav
+      >
+        <!-- Style cascading bug  -->
+        <!-- https://github.com/vuetifyjs/vuetify/pull/8574 -->
+        <div />
 
-      <template v-for="(item, i) in computedItems">
-        <base-item-group
-          v-if="item.children"
-          :key="`group-${i}`"
-          :item="item"
-        >
-          <!--  -->
-        </base-item-group>
+        <template v-for="(item, i) in computedItems">
+          <base-item-group
+            v-if="item.children"
+            :key="`group-${i}`"
+            :item="item"
+          >
+            <!--  -->
+          </base-item-group>
 
-        <base-item
-          v-else
-          :key="`item-${i}`"
-          :item="item"
-        />
-      </template>
+          <base-item
+            v-else
+            :key="`item-${i}`"
+            :item="item"
+          />
+        </template>
 
-      <!-- Style cascading bug  -->
-      <!-- https://github.com/vuetifyjs/vuetify/pull/8574 -->
-      <div />
-    </v-list>
+        <!-- Style cascading bug  -->
+        <!-- https://github.com/vuetifyjs/vuetify/pull/8574 -->
+        <div />
+      </v-list>
+    
 
-    <template #append>
+    <!-- <template #append>
       <base-item
         :item="{
           title: $t('upgrade'),
@@ -84,7 +87,7 @@
           to: '/upgrade',
         }"
       />
-    </template>
+    </template> -->
   </v-navigation-drawer>
 </template>
 
@@ -107,38 +110,38 @@
     data: () => ({
       items: [
         {
-          icon: 'mdi-view-dashboard',
+          // icon: 'mdi-view-dashboard',
           title: 'تعریف موجودیت',
           // to: '/',
           group: '',
           children: [
             {
-              icon: 'mdi-view-dashboard',
+              // icon: 'mdi-view-dashboard',
               title: 'تعریف دام',
               to: 'Animals',
             },
             {
-              icon: 'mdi-view-dashboard',
+              // icon: 'mdi-view-dashboard',
               title: 'تعریف گله',
               to: 'Flocks',
             },
             {
-              icon: 'mdi-view-dashboard',
+              // icon: 'mdi-view-dashboard',
               title: 'تعریف تیپ گله',
               to: 'FlockTips',
             },
             {
-              icon: 'mdi-view-dashboard',
+              // icon: 'mdi-view-dashboard',
               title: 'تعریف نژاد',
               to: 'Races',
             },
             {
-              icon: 'mdi-view-dashboard',
+              // icon: 'mdi-view-dashboard',
               title: 'تعریف رنج سنی',
               to: 'AgeRanges',
             },
             {
-              icon: 'mdi-view-dashboard',
+              // icon: 'mdi-view-dashboard',
               title: 'تعریف سالن',
               to: 'Salons',
             },
@@ -146,49 +149,49 @@
            
         },
         {
-          icon: 'mdi-view-dashboard',
+          // icon: 'mdi-view-dashboard',
           title: "عملیات های دام",
           // to: '/',
           group: '',
           children: [
             {
-              icon: 'mdi-view-dashboard',
+              // icon: 'mdi-view-dashboard',
               title: 'عملیات وزن کشی',
               to: 'weights',
             },
           ],
            
         },
-        {
-          icon: 'mdi-account',
-          title: 'user',
-          to: '/pages/user',
-        },
-        {
-          title: 'rtables',
-          icon: 'mdi-clipboard-outline',
-          to: '/tables/regular-tables',
-        },
-        {
-          title: 'typography',
-          icon: 'mdi-format-font',
-          to: '/components/typography',
-        },
-        {
-          title: 'icons',
-          icon: 'mdi-chart-bubble',
-          to: '/components/icons',
-        },
-        {
-          title: 'google',
-          icon: 'mdi-map-marker',
-          to: '/maps/google-maps',
-        },
-        {
-          title: 'notifications',
-          icon: 'mdi-bell',
-          to: '/components/notifications',
-        },
+        // {
+        //   icon: 'mdi-account',
+        //   title: 'user',
+        //   // to: '/pages/user',
+        // },
+        // {
+        //   title: 'rtables',
+        //   icon: 'mdi-clipboard-outline',
+        //   // to: '/tables/regular-tables',
+        // },
+        // {
+        //   title: 'typography',
+        //   icon: 'mdi-format-font',
+        //   // to: '/components/typography',
+        // },
+        // {
+        //   title: 'icons',
+        //   icon: 'mdi-chart-bubble',
+        //   // to: '/components/icons',
+        // },
+        // {
+        //   title: 'google',
+        //   icon: 'mdi-map-marker',
+        //   // to: '/maps/google-maps',
+        // },
+        // {
+        //   title: 'notifications',
+        //   icon: 'mdi-bell',
+        //   // to: '/components/notifications',
+        // },
       ],
     }),
 
@@ -226,6 +229,32 @@
   }
 </script>
 
-<style lang="sass">
-  
+<style lang="css">
+  * {
+    font-family: iranyekan;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
 </style>

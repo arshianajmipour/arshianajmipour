@@ -16,10 +16,10 @@
         <div class="modal-mask" v-if="show_submitVaznsOfGale_modal">
             <div class="modal-wrapper">
                 <div class="modal-container">
-                     <submitVaznsOfGale-component v-bind:gale="current_gale"
+                     <submit-vazns-of-gale v-bind:gale="current_gale"
                       @close="show_submitVaznsOfGale_modal=false"
                       @submitSuccess="fetchGales()">
-                      </submitVaznsOfGale-component>
+                      </submit-vazns-of-gale>
                 </div>
                
             </div>
@@ -62,6 +62,10 @@
 <script>
 
 export default {
+    components: {
+        SubmitVaznsOfGale: () => import('./SubmitVaznsOfGale'),
+    },
+
     data() {
         return {
 
