@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-    	<a href="newDamRegistration">افزودن دام جدید+</a>
+    	<router-link to="/newDamRegistration"><a>افزودن دام جدید+</a></router-link>
     	<div class = "searching">
     		<input v-model="searched" >
     		<button @click = "search(searched)" class="btn btn-warning"><i class="fa fa-search"></i>جستجو</button>

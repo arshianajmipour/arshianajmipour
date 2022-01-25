@@ -1,5 +1,5 @@
 <template>
-    <router-view>dscdsv</router-view>
+    <router-view />
 </template>
 
 <script>

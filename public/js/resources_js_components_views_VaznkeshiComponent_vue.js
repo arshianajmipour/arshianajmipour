@@ -73,6 +73,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    SubmitVaznsOfGale: function SubmitVaznsOfGale() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_views_SubmitVaznsOfGale_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./SubmitVaznsOfGale */ "./resources/js/components/views/SubmitVaznsOfGale.vue"));
+    }
+  },
   data: function data() {
     return {
       gales: [],
@@ -249,7 +254,7 @@ var render = function () {
                 "div",
                 { staticClass: "modal-container" },
                 [
-                  _c("submitVaznsOfGale-component", {
+                  _c("submit-vazns-of-gale", {
                     attrs: { gale: _vm.current_gale },
                     on: {
                       close: function ($event) {

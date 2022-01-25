@@ -18,14 +18,20 @@ class Maincontroller extends Controller
     {
 		$animal=Animal::create([
     		'pelak' => $req->input('pelak'),
+<<<<<<< HEAD
     		'gone' => $req->input('gone')="boz",
     		'jhen' => $req->input('jhen')="none",
     		'jensiat' => $req->input('jensiat')="nar",
+=======
+    		'gone' => $req->input('gone')['v'] /*'boz'*/,
+    		'jhen' => $req->input('jhen')['v']/*'hetero'*/,
+    		'jensiat' => $req->input('jensiat')['v']/*'nar'*/,
+>>>>>>> cd4af8ce39887a1df05bf57cc75982cd1660c467
 		]);
 	    $animal->tavalod = $req->input('tavalod');
 	    $animal->gale_id = $req->input('gale');
 	    $animal->save();
-	    return redirect('newDamRegistration');
+	    // return redirect('newDamRegistration');
     }
 
     public function newGaleRegistration()
