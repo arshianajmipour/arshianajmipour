@@ -162,6 +162,18 @@
           ],
            
         },
+                {
+          // icon: 'mdi-view-dashboard',
+          title: "گزارش های دامداری",
+          // to: '/',
+          group: '',
+          children: [
+            {
+
+            },
+          ],
+           
+        },
         // {
         //   icon: 'mdi-account',
         //   title: 'user',

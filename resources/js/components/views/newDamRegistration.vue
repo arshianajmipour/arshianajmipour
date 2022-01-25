@@ -12,6 +12,7 @@
     color : white;
 ">    
     <h2  class="text-center">ثبت اطلاعات دام جدید</h2>
+
 </v-card-title>
 <v-card-text>              
 
@@ -97,9 +98,17 @@
                                               large
                                               @click = "addAnimal(animal)"
                                         >
-                                              ثبت دام
+                                             ثبت دام جدبد 
                                         </v-btn> 
-                                <!-- <a href="" class="btn btn-warning"><i class="fa fa-angle-left"></i> بازگشت</a> -->
+                                        <v-btn
+                                             color="red"
+                                              dark
+                                              large
+                                        >
+                                            <a href="/animals" style="
+                                            color: white;
+                                            "><i class="fa fa-angle-left"></i> بازگشت به لیست دام ها</a>
+                                        </v-btn> 
                             </div>
                         </div>
                     </v-form>
@@ -145,7 +154,8 @@
         addAnimal(animal){
             console.log(JSON.stringify(animal));
             this.$refs.form.validate();
-            
+            if(this.$refs.form.validate()){
+
                 fetch('api/AddNewAnimals' , {
                     method : 'post' ,
                     body:JSON.stringify(animal),
@@ -155,7 +165,8 @@
                     }
                 })
                 .then(res => res.json());
-            
+                alert('دام مورد نظر با موفقیت در سامانه ثبت شد');
+            }
         },
 
     },

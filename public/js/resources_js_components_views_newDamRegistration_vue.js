@@ -122,6 +122,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -173,16 +182,20 @@ __webpack_require__.r(__webpack_exports__);
     addAnimal: function addAnimal(animal) {
       console.log(JSON.stringify(animal));
       this.$refs.form.validate();
-      fetch('api/AddNewAnimals', {
-        method: 'post',
-        body: JSON.stringify(animal),
-        headers: {
-          'Accept': 'application/json',
-          'content-type': 'aplication/json'
-        }
-      }).then(function (res) {
-        return res.json();
-      });
+
+      if (this.$refs.form.validate()) {
+        fetch('api/AddNewAnimals', {
+          method: 'post',
+          body: JSON.stringify(animal),
+          headers: {
+            'Accept': 'application/json',
+            'content-type': 'aplication/json'
+          }
+        }).then(function (res) {
+          return res.json();
+        });
+        alert('دام مورد نظر با موفقیت در سامانه ثبت شد');
+      }
     }
   },
   mounted: function mounted() {
@@ -502,7 +515,25 @@ var render = function () {
                             },
                             [
                               _vm._v(
-                                "\r\n                                              ثبت دام\r\n                                        "
+                                "\r\n                                             ثبت دام جدبد \r\n                                        "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            { attrs: { color: "red", dark: "", large: "" } },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { color: "white" },
+                                  attrs: { href: "/animals" },
+                                },
+                                [
+                                  _c("i", { staticClass: "fa fa-angle-left" }),
+                                  _vm._v(" بازگشت به لیست دام ها"),
+                                ]
                               ),
                             ]
                           ),

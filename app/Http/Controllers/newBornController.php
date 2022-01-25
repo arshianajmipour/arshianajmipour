@@ -16,6 +16,6 @@ class newBornController extends Controller
 	{
 		$nar = Animal::all()->where('jensiat'=='nar');
 		$made = Animal::all()->where('jensiat'=='made');
-		return view('newBorn')withNar($nar)->withMade($made);
+		return view('newBorn')->withNar($nar)->withMade($made);
 	}	
 }

@@ -163,6 +163,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           title: 'عملیات وزن کشی',
           to: 'weights'
         }]
+      }, {
+        // icon: 'mdi-view-dashboard',
+        title: "گزارش های دامداری",
+        // to: '/',
+        group: '',
+        children: [{}]
       } // {
       //   icon: 'mdi-account',
       //   title: 'user',
