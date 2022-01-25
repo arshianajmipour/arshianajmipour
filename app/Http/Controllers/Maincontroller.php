@@ -69,10 +69,10 @@ class Maincontroller extends Controller
     {
     	$animal = Animal::where('id',$req->id)->first();
     	$animal->pelak = $req->input('pelak');
-    	$animal->jensiat = $req->input('jensiat');
+    	$animal->jensiat = $req->input('jensiat')['v'];
     	$animal->tavalod = $req->input('tavalod');
-    	$animal->gone = $req->input('gone');
-    	$animal->jhen = $req->input('jhen');
+    	$animal->gone = $req->input('gone')['v'];
+    	$animal->jhen = $req->input('jhen')['v'];
     	if($animal->save()){
         	$data = array('data' => Animal::all() );
     		return $data;
