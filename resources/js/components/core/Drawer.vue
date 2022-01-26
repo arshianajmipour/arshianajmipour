@@ -159,6 +159,11 @@
               title: 'عملیات وزن کشی',
               to: 'weights',
             },
+            {
+              // icon: 'mdi-view-dashboard',
+              title:'عملیات ثبت زایش',
+              to: 'new born',
+            },            
           ],
            
         },
@@ -169,7 +174,20 @@
           group: '',
           children: [
             {
-
+              title: 'آمار ماهیانه دام',
+              to: 'monthlyAnimalreport',
+            },
+            {
+              title: 'شجره دام',
+              to: 'AnimalbirthTree',
+            },
+            {
+              title: 'تلفات هنگام زایش',
+              to: 'lostChildrenOfBirth',
+            },
+            {
+              title: 'گزارش زایش ها',
+              to: 'BirthReport',
             },
           ],
            

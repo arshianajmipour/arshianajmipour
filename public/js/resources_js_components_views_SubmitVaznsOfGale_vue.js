@@ -63,6 +63,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -245,6 +248,11 @@ var render = function () {
                 expression: "tarikh_of_vazn",
               },
             ],
+            staticStyle: {
+              "background-color": "#FAF8F8",
+              border: "1px solid #000",
+              "font-size": "large",
+            },
             attrs: { type: "date", name: "tarikh", id: "tarikh" },
             domProps: { value: _vm.tarikh_of_vazn },
             on: {
@@ -281,6 +289,11 @@ var render = function () {
                               expression: "vazns[animal.id].vazn.kilo",
                             },
                           ],
+                          staticStyle: {
+                            "background-color": "#FAF8F8",
+                            border: "1px solid #000",
+                            "font-size": "large",
+                          },
                           attrs: {
                             type: "number",
                             name: "kilo" + animal.id,
@@ -319,6 +332,11 @@ var render = function () {
                               expression: "vazns[animal.id].vazn.geram",
                             },
                           ],
+                          staticStyle: {
+                            "background-color": "#FAF8F8",
+                            border: "1px solid #000",
+                            "font-size": "large",
+                          },
                           attrs: {
                             type: "number",
                             name: "geram" + animal.id,

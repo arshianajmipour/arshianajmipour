@@ -5,7 +5,8 @@
         <form @submit.prevent="createVazns()">
             <div>
                 <label for="tarikh">انتخاب تاریخ وزن کشی:</label>
-                <input type="date" name="tarikh" id="tarikh" v-model="tarikh_of_vazn"/>
+                <input type="date" name="tarikh" id="tarikh" v-model="tarikh_of_vazn"
+                style="background-color:#FAF8F8;  border: 1px solid #000; font-size: large;"/>
             </div>
             <div class="table-wrapper">
                 <table class="w-100 table">
@@ -24,6 +25,7 @@
                                 <input type="number" :name="'kilo'+animal.id" :id="'kilo'+animal.id" min="0"
                                 v-if="vazns.length"
                                 v-model="vazns[animal.id].vazn.kilo"
+                                style="background-color:#FAF8F8;  border: 1px solid #000; font-size: large;"
                                 >
                                 <label :for="'kilo'+animal.id">کیلو</label>
                             </td>
@@ -31,6 +33,7 @@
                                 <input type="number" :name="'geram'+animal.id" :id="'geram'+animal.id" min="0"
                                 v-if="vazns.length"
                                 v-model="vazns[animal.id].vazn.geram"
+                                style="background-color:#FAF8F8;  border: 1px solid #000; font-size: large;"
                                 >
                                 <label :for="'geram'+animal.id">گرم</label>
                             </td>

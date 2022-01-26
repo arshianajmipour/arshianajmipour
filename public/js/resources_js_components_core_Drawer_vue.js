@@ -162,13 +162,29 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           // icon: 'mdi-view-dashboard',
           title: 'عملیات وزن کشی',
           to: 'weights'
+        }, {
+          // icon: 'mdi-view-dashboard',
+          title: 'عملیات ثبت زایش',
+          to: 'new born'
         }]
       }, {
         // icon: 'mdi-view-dashboard',
         title: "گزارش های دامداری",
         // to: '/',
         group: '',
-        children: [{}]
+        children: [{
+          title: 'آمار ماهیانه دام',
+          to: 'monthlyAnimalreport'
+        }, {
+          title: 'شجره دام',
+          to: 'AnimalbirthTree'
+        }, {
+          title: 'تلفات هنگام زایش',
+          to: 'lostChildrenOfBirth'
+        }, {
+          title: 'گزارش زایش ها',
+          to: 'BirthReport'
+        }]
       } // {
       //   icon: 'mdi-account',
       //   title: 'user',

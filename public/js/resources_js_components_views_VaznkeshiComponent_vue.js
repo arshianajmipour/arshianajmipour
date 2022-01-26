@@ -72,6 +72,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     SubmitVaznsOfGale: function SubmitVaznsOfGale() {
@@ -207,44 +216,52 @@ var render = function () {
     _c("h1", { staticClass: "text-center" }, [_vm._v("وزن کشی")]),
     _vm._v(" "),
     _c("div", { staticClass: "w-100 d-flex p-5" }, [
-      _c("label", { attrs: { for: "gale" } }, [_vm._v("انتخاب گله")]),
-      _vm._v(" "),
       _c(
-        "select",
-        {
-          attrs: { id: "gale", name: "gale" },
-          on: {
-            change: function ($event) {
-              return _vm.setCurrentGaleID($event)
-            },
-          },
-        },
+        "div",
         [
-          _c("option", { attrs: { selected: "" } }, [_vm._v("انتخاب کنید")]),
+          _c("label", { attrs: { for: "gale" } }, [_vm._v("انتخاب گله:")]),
           _vm._v(" "),
-          _vm._l(_vm.gales, function (gale) {
-            return _c(
-              "option",
-              { key: gale.id, domProps: { value: gale.id } },
-              [_vm._v(_vm._s(gale.name))]
-            )
-          }),
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button" },
-          on: {
-            click: function ($event) {
-              _vm.show_submitVaznsOfGale_modal = true
+          _c(
+            "select",
+            {
+              staticStyle: { margin: "20px" },
+              attrs: { id: "gale", name: "gale" },
+              on: {
+                change: function ($event) {
+                  return _vm.setCurrentGaleID($event)
+                },
+              },
             },
-          },
-        },
-        [_vm._v("\r\n            ثبت وزن کشی برای گله\r\n        ")]
+            [
+              _c("option", { attrs: { selected: "" } }, [
+                _vm._v("انتخاب کنید"),
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.gales, function (gale) {
+                return _c(
+                  "option",
+                  { key: gale.id, domProps: { value: gale.id } },
+                  [_vm._v(_vm._s(gale.name))]
+                )
+              }),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              attrs: { color: "#1D1D66", dark: "", large: "" },
+              on: {
+                click: function ($event) {
+                  _vm.show_submitVaznsOfGale_modal = true
+                },
+              },
+            },
+            [_vm._v("\r\n              ثبت وزن کشی گله\r\n        ")]
+          ),
+        ],
+        1
       ),
       _vm._v(" "),
       _vm.show_submitVaznsOfGale_modal
@@ -252,7 +269,10 @@ var render = function () {
             _c("div", { staticClass: "modal-wrapper" }, [
               _c(
                 "div",
-                { staticClass: "modal-container" },
+                {
+                  staticClass: "modal-container",
+                  staticStyle: { width: "50%", "background-color": "#eee" },
+                },
                 [
                   _c("submit-vazns-of-gale", {
                     attrs: { gale: _vm.current_gale },

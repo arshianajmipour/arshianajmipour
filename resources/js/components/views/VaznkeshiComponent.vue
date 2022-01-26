@@ -3,19 +3,28 @@
     <h1 class="text-center">وزن کشی</h1>
 
     <div class="w-100 d-flex p-5">
-        <label for="gale">انتخاب گله</label>
-        <select id="gale" name="gale" @change="setCurrentGaleID($event)">
+        <div>
+        <label for="gale">انتخاب گله:</label>
+        <select id="gale" name="gale" @change="setCurrentGaleID($event)" style="margin : 20px;">
             <option selected>انتخاب کنید</option>
             <option v-for="gale in gales" v-bind:key="gale.id" :value="gale.id">{{ gale.name }}</option>
         </select>
 
-        <button type="button" class="btn btn-primary" @click="show_submitVaznsOfGale_modal=true">
+        <!-- <button type="button" class="btn btn-primary" @click="show_submitVaznsOfGale_modal=true">
             ثبت وزن کشی برای گله
-        </button>
-
+        </button> -->
+        <v-btn
+             color="#1D1D66"
+              dark
+              large
+              @click="show_submitVaznsOfGale_modal=true"
+        >
+              ثبت وزن کشی گله
+        </v-btn> 
+        </div>
         <div class="modal-mask" v-if="show_submitVaznsOfGale_modal">
             <div class="modal-wrapper">
-                <div class="modal-container">
+                <div class="modal-container" style="width:50%; background-color:#eee;">
                      <submit-vazns-of-gale v-bind:gale="current_gale"
                       @close="show_submitVaznsOfGale_modal=false"
                       @submitSuccess="fetchGales()">
