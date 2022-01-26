@@ -162,6 +162,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           // icon: 'mdi-view-dashboard',
           title: 'عملیات وزن کشی',
           to: 'weights'
+        }, {
+          // icon: 'mdi-view-dashboard',
+          title: 'عملیات ثبت زایش',
+          to: 'new born'
         }]
       }, {
         // icon: 'mdi-view-dashboard',

@@ -159,6 +159,11 @@
               title: 'عملیات وزن کشی',
               to: 'weights',
             },
+            {
+              // icon: 'mdi-view-dashboard',
+              title:'عملیات ثبت زایش',
+              to: 'new born',
+            },            
           ],
            
         },
