@@ -165,6 +165,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -458,6 +463,26 @@ var render = function () {
     "div",
     { staticClass: "container" },
     [
+      _c(
+        "v-chip",
+        {
+          staticClass: "ma-2",
+          attrs: {
+            "x-large": "",
+            color: "#1D1D66",
+            label: "",
+            "text-color": "white",
+          },
+        },
+        [
+          _c("v-icon", { attrs: { left: "" } }, [_vm._v(" mdi-label")]),
+          _vm._v(" لیست دام ها"),
+        ],
+        1
+      ),
+      _c("br"),
+      _c("br"),
+      _vm._v(" "),
       _c("router-link", { attrs: { to: "/newDamRegistration" } }, [
         _c("a", [_vm._v("افزودن دام جدید+")]),
       ]),
@@ -576,7 +601,7 @@ var render = function () {
                                 attrs: { color: "red", dark: "", large: "" },
                                 on: {
                                   click: function ($event) {
-                                    return _vm.editAnimal(animal)
+                                    return _vm.deleteAnimal(animal.id)
                                   },
                                 },
                               },

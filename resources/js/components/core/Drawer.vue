@@ -169,7 +169,20 @@
           group: '',
           children: [
             {
-
+              title: 'آمار ماهیانه دام',
+              to: 'monthlyAnimalreport',
+            },
+            {
+              title: 'شجره دام',
+              to: 'AnimalbirthTree',
+            },
+            {
+              title: 'تلفات هنگام زایش',
+              to: 'lostChildrenOfBirth',
+            },
+            {
+              title: 'گزارش زایش ها',
+              to: 'BirthReport',
             },
           ],
            

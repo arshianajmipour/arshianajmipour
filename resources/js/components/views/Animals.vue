@@ -1,5 +1,10 @@
 <template>
     <div class="container">
+			<v-chip x-large        class="ma-2"
+      color="#1D1D66"
+      label
+      text-color="white"> 
+	          <v-icon left> mdi-label</v-icon> لیست دام ها</v-chip><br><br>
     	<router-link to="/newDamRegistration"><a>افزودن دام جدید+</a></router-link>
     	<div class = "searching">
     		<input v-model="searched" style="background-color:#FAF8F8;  border: 1px solid #000; font-size: large;">
@@ -47,7 +52,7 @@
                                               dark
                                               large
 											  v-if="formSeen !== animal.id"
-                                              @click = "editAnimal(animal)"
+                                              @click="deleteAnimal(animal.id)"
                                         >
                                               <i class="fa fa-trash"></i>
                                         </v-btn> 

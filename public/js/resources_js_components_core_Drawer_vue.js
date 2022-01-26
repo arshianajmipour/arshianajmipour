@@ -168,7 +168,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         title: "گزارش های دامداری",
         // to: '/',
         group: '',
-        children: [{}]
+        children: [{
+          title: 'آمار ماهیانه دام',
+          to: 'monthlyAnimalreport'
+        }, {
+          title: 'شجره دام',
+          to: 'AnimalbirthTree'
+        }, {
+          title: 'تلفات هنگام زایش',
+          to: 'lostChildrenOfBirth'
+        }, {
+          title: 'گزارش زایش ها',
+          to: 'BirthReport'
+        }]
       } // {
       //   icon: 'mdi-account',
       //   title: 'user',
