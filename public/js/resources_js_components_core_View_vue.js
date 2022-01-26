@@ -26,6 +26,13 @@ __webpack_require__.r(__webpack_exports__);
     DashboardCoreFooter: function DashboardCoreFooter() {
       return __webpack_require__.e(/*! import() */ "resources_js_components_core_Footer_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./Footer */ "./resources/js/components/core/Footer.vue"));
     }
+  },
+  computed: {
+    myProps: function myProps() {
+      return {
+        title: this.$t(this.$route.name)
+      };
+    }
   }
 });
 
@@ -47,7 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#dashboard-container[data-v-795dda0c] {\n  width: 100%;\n  background: white;\n  border-radius: 0.5em;\n  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;\n  min-height: 80vh;\n  padding: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n*[data-v-795dda0c] {\n  background: #F1F8E9;\n}\n#dashboard-container[data-v-795dda0c] {\n  width: 90%;\n  background: white;\n  border-radius: 0.5em;\n  margin: auto;\n  margin-top: 1em;\n  /* box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px; */\n  min-height: 80vh;\n  padding: 1em;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -182,7 +189,12 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("v-content", [
-    _c("div", { attrs: { id: "dashboard-container" } }, [_c("router-view")], 1),
+    _c(
+      "div",
+      { attrs: { id: "dashboard-container" } },
+      [_c("router-view", _vm._b({}, "router-view", _vm.myProps, false))],
+      1
+    ),
   ])
 }
 var staticRenderFns = []

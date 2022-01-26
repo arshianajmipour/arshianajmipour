@@ -23,6 +23,8 @@ import i18n from './i18n'
 
 Vue.component('dashboard-component', require('./components/views/Dashboard.vue').default);
 
+Vue.component('pulse-loader', require('vue-spinner/src/PulseLoader.vue').default);
+
 new Vue({
     vuetify,
     router,

@@ -165,6 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -209,7 +210,8 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         v: 'none',
         t: 'هیچکدام'
-      }]
+      }],
+      loaded: false
     };
   },
   created: function created() {
@@ -223,6 +225,7 @@ __webpack_require__.r(__webpack_exports__);
         return res.json();
       }).then(function (res) {
         _this.animals = res.data;
+        _this.loaded = true;
       });
     },
     hideForm: function hideForm() {
@@ -320,7 +323,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#entityform[data-v-53bf23fb] {\r\n  text-align: center;\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#entityform[data-v-53bf23fb] {\r\n  text-align: center;\n}\npulse-loader[data-v-53bf23fb] {\r\n\tmargin: auto 0;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -501,6 +504,10 @@ var render = function () {
           [_c("i", { staticClass: "fa fa-search" }), _vm._v("جستجو")]
         ),
       ]),
+      _vm._v(" "),
+      _c("pulse-loader", {
+        attrs: { loading: !_vm.loaded, color: _vm.color, size: _vm.size },
+      }),
       _vm._v(" "),
       _vm._l(_vm.animals, function (animal) {
         return _c(

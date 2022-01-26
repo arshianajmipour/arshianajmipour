@@ -36,27 +36,27 @@ export default new Router({
                         {
                             name: 'Flocks',
                             path: 'Flocks',
-                            component: () => import('./views/dashboard/component/Notifications'),
+                            // component: () => import('./views/dashboard/component/Notifications'),
                         },
                         {
                             name: 'FlockTips',
                             path: 'FlockTips',
-                            component: () => import('./views/dashboard/component/Notifications'),
+                            // component: () => import('./views/dashboard/component/Notifications'),
                         },
                         {
                             name: 'Races',
                             path: 'Races',
-                            component: () => import('./views/dashboard/component/Notifications'),
+                            // component: () => import('./views/dashboard/component/Notifications'),
                         },
                         {
                             name: 'AgeRanges',
                             path: 'AgeRanges',
-                            component: () => import('./views/dashboard/component/Notifications'),
+                            // component: () => import('./views/dashboard/component/Notifications'),
                         },
                         {
                             name: 'Salons',
                             path: 'Salons',
-                            component: () => import('./views/dashboard/component/Notifications'),
+                            // component: () => import('./views/dashboard/component/Notifications'),
                         },
                     ],
                 },

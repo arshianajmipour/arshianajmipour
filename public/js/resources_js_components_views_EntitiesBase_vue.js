@@ -15,8 +15,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'EntitiesBase'
+  name: 'EntitiesBase',
+  props: {
+    title: {
+      type: String,
+      "default": ""
+    }
+  }
 });
 
 /***/ }),
@@ -105,7 +114,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("router-view")
+  return _c(
+    "div",
+    [_c("h1", [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c("router-view")],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

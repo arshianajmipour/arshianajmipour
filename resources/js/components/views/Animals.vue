@@ -6,6 +6,7 @@
     		<button @click = "search(searched)" class="btn btn-warning"><i class="fa fa-search"></i>جستجو</button>
     	</div>
 
+		<pulse-loader :loading="!loaded" :color="color" :size="size"></pulse-loader>
     	<div class ="card card-body mb-2" v-for="animal in animals" v-bind:key="animal.id" style="background-color: #FAF8F8;">
 			      <v-chip-group
 			        v-model="selection"
@@ -174,7 +175,9 @@ data: function() {
 	forEditing:{ v : '' , t : ''},
 	itemsgone: [{v:'boz', t:'بز'},{v:'gosfand', t:'گوسفند'} ],
     itemsjensiat: [{v:'nar', t:'نر'},{v:'made', t:'ماده'} ],
-    itemsjhen: [{v:'hetero', t:'هتروزیگوت'},{v:'hemo', t:'هموزیگوت'},{v:'none', t:'هیچکدام'} ],
+	itemsjhen: [{v:'hetero', t:'هتروزیگوت'},{v:'hemo', t:'هموزیگوت'},{v:'none', t:'هیچکدام'} ],
+	
+	loaded: false,
   };
 },
 created(){
@@ -187,6 +190,8 @@ methods:{
 		.then(res =>res.json())
 		.then(res => {
 			this.animals = res.data;
+
+			this.loaded = true;
 		});
 	},
 	hideForm(){
@@ -262,5 +267,8 @@ mounted() {
   text-align: center;
 }
 
+pulse-loader {
+	margin: auto 0;
+}
 
 </style>
