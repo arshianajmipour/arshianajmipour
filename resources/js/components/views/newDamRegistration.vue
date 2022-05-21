@@ -8,7 +8,7 @@
     color=#F9F9F9
 >
 <v-card-title style="
-    background-color: black;
+    background-color: #9FA8DA;
     color : white;
 ">    
     <h2  class="text-center">ثبت اطلاعات دام جدید</h2>
@@ -105,9 +105,11 @@
                                               dark
                                               large
                                         >
-                                            <a href="/animals" style="
-                                            color: white;
-                                            "><i class="fa fa-angle-left"></i> بازگشت به لیست دام ها</a>
+                                            <router-link to="/animals">
+                                                <a style="
+                                                color: white;
+                                                "><i class="fa fa-angle-left"></i> بازگشت به لیست دام ها</a>
+                                            </router-link>
                                         </v-btn> 
                             </div>
                         </div>

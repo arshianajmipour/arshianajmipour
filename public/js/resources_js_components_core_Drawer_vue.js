@@ -129,7 +129,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         // to: '/',
         group: '',
         children: [{
-          // icon: 'mdi-view-dashboard',
+          icon: '',
           title: 'تعریف دام',
           to: 'Animals'
         }, {
@@ -164,8 +164,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           to: 'weights'
         }, {
           // icon: 'mdi-view-dashboard',
-          title: 'عملیات ثبت زایش',
-          to: 'new born'
+          title: 'عملیات زایش',
+          to: 'newBirth'
         }]
       }, {
         // icon: 'mdi-view-dashboard',
@@ -266,7 +266,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n* {\n  font-family: iranyekan;\n}\n\n/* width */\n::-webkit-scrollbar {\n  width: 10px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #f1f1f1;\n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #888;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #555;\n}\na:hover {\n  text-decoration: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n* {\n  font-family: iranyekan;\n}\n\n/* width */\n::-webkit-scrollbar {\n  width: 10px;\n}\n\n/* Track */\n::-webkit-scrollbar-track {\n  background: #f1f1f1;\n}\n\n/* Handle */\n::-webkit-scrollbar-thumb {\n  background: #888;\n}\n\n/* Handle on hover */\n::-webkit-scrollbar-thumb:hover {\n  background: #555;\n}\na:hover {\n  text-decoration: none;\n}\n.theme--dark.v-navigation-drawer {\n  background-color: #4CAF50;\n}\n.v-list-item__icon.v-list-item__icon--text {\n  visibility: hidden;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -460,7 +460,7 @@ var render = function () {
                 "v-list-item-content",
                 [
                   _c("v-list-item-title", {
-                    staticStyle: { "font-size": "large" },
+                    staticStyle: { "font-size": "large", "font-weight": "800" },
                     domProps: { textContent: _vm._s(_vm.profile.title) },
                   }),
                 ],

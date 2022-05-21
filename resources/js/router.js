@@ -15,7 +15,7 @@ export default new Router({
                 {
                   name: 'Dashboard',
                   path: '',
-                  component: () => import('./views/dashboard/Dashboard'),
+                //   component: () => import('./views/dashboard/Dashboard'),
                 },
 
                 {
@@ -70,9 +70,35 @@ export default new Router({
                           path: 'weights',
                           component: () => import('./components/views/VaznkeshiComponent'),
                       },
-
+                      {
+                        name: 'newBirth',
+                        path: 'newBirth',
+                    },
                   ],
-              },
+                },
+                {
+                    name: 'Reports',
+                    path: '',
+                    component: () => import('./components/views/EntitiesBase'),
+                    children: [
+                        {
+                            name: 'monthlyAnimalreport',
+                            path: 'monthlyAnimalreport',
+                        },
+                        {
+                            name: 'AnimalbirthTree',
+                            path: 'AnimalbirthTree',
+                        },
+                        {
+                            name: 'lostChildrenOfBirth',
+                            path: 'lostChildrenOfBirth',
+                        },
+                        {
+                            name: 'BirthReport',
+                            path: 'BirthReport',
+                        },
+                    ],
+                },
                 // Pages
                 {
                   name: 'User Profile',

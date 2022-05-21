@@ -39,7 +39,7 @@
 
         <v-list-item-content>
           <v-list-item-title
-            style="font-size: large;"
+            style="font-size: large;font-weight:800;"
             v-text="profile.title"
           />
         </v-list-item-content>
@@ -116,7 +116,7 @@
           group: '',
           children: [
             {
-              // icon: 'mdi-view-dashboard',
+              icon: '',
               title: 'تعریف دام',
               to: 'Animals',
             },
@@ -161,8 +161,8 @@
             },
             {
               // icon: 'mdi-view-dashboard',
-              title:'عملیات ثبت زایش',
-              to: 'new born',
+              title:'عملیات زایش',
+              to: 'newBirth',
             },            
           ],
            
@@ -287,4 +287,13 @@
   a:hover {
     text-decoration: none;
   }
+
+  .theme--dark.v-navigation-drawer {
+    background-color: #4CAF50;
+  }
+
+  .v-list-item__icon.v-list-item__icon--text {
+    visibility: hidden;
+  }
+
 </style>

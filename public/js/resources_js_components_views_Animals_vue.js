@@ -171,6 +171,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -226,6 +235,7 @@ __webpack_require__.r(__webpack_exports__);
     fetchAnimals: function fetchAnimals() {
       var _this = this;
 
+      this.loaded = false;
       fetch('api/animals').then(function (res) {
         return res.json();
       }).then(function (res) {
@@ -303,6 +313,9 @@ __webpack_require__.r(__webpack_exports__);
         _this4.searched = '';
         _this4.animals = res.data;
       });
+    },
+    toFarsi: function toFarsi(str) {
+      return this.$t(str);
     }
   },
   mounted: function mounted() {
@@ -467,28 +480,22 @@ var render = function () {
     { staticClass: "container" },
     [
       _c(
-        "v-chip",
-        {
-          staticClass: "ma-2",
-          attrs: {
-            "x-large": "",
-            color: "#1D1D66",
-            label: "",
-            "text-color": "white",
-          },
-        },
+        "div",
+        { staticStyle: { "margin-bottom": "1em" } },
         [
-          _c("v-icon", { attrs: { left: "" } }, [_vm._v(" mdi-label")]),
-          _vm._v(" لیست دام ها"),
+          _c(
+            "router-link",
+            { attrs: { to: "/newDamRegistration" } },
+            [
+              _c("v-btn", { attrs: { color: "accent" } }, [
+                _c("a", [_vm._v("افزودن دام جدید+")]),
+              ]),
+            ],
+            1
+          ),
         ],
         1
       ),
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("router-link", { attrs: { to: "/newDamRegistration" } }, [
-        _c("a", [_vm._v("افزودن دام جدید+")]),
-      ]),
       _vm._v(" "),
       _c("div", { staticClass: "searching" }, [
         _c("input", {
@@ -563,20 +570,26 @@ var render = function () {
                     _c("v-chip", [_vm._v("    " + _vm._s(animal.id))]),
                     _vm._v(" "),
                     _c("v-chip", [
-                      _vm._v("    شماره پلاک:" + _vm._s(animal.pelak)),
+                      _vm._v("    شماره پلاک: " + _vm._s(animal.pelak)),
                     ]),
                     _vm._v(" "),
                     _c("v-chip", [
-                      _vm._v("   جنسیت:" + _vm._s(animal.jensiat)),
+                      _vm._v(
+                        "   جنسیت: " + _vm._s(_vm.toFarsi(animal.jensiat))
+                      ),
                     ]),
                     _vm._v(" "),
                     _c("v-chip", [
-                      _vm._v("  تاریخ تولد :" + _vm._s(animal.tavalod)),
+                      _vm._v("  تاریخ تولد: " + _vm._s(animal.tavalod)),
                     ]),
                     _vm._v(" "),
-                    _c("v-chip", [_vm._v("  گونه:" + _vm._s(animal.gone))]),
+                    _c("v-chip", [
+                      _vm._v("  گونه: " + _vm._s(_vm.toFarsi(animal.gone))),
+                    ]),
                     _vm._v(" "),
-                    _c("v-chip", [_vm._v("   ژن :" + _vm._s(animal.jhen))]),
+                    _c("v-chip", [
+                      _vm._v("   ژن: " + _vm._s(_vm.toFarsi(animal.jhen))),
+                    ]),
                     _vm._v(" "),
                     _c(
                       "div",

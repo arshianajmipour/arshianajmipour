@@ -44,5 +44,22 @@
   "wizard": "Wizard",
   "Animals": "دام",
   "gosfand": "گوسفند",
-  "boz": "بز"
+  "boz": "بز",
+  "Flocks": "گله",
+  "FlockTips": "تیپ گله",
+  "Races": "نژاد",
+  "AgeRanges": "رنج سنی",
+  "Salons": "سالن",
+  "vaznkeshi": "وزن‌کشی",
+  "newBirth": "زایش",
+  "monthlyAnimalreport": "آمار ماهیانه دام",
+  "AnimalbirthTree": "شجره دام",
+  "lostChildrenOfBirth": "تلفات هنگام زایش",
+  "BirthReport": "گزارش زایش‌ها",
+  "newDamRegistration": "",
+  "nar": "نر",
+  "made": "ماده",
+  "none": "هیچکدام",
+  "hetero": "هتروزیگوت",
+  "hemo": "هموزیگوت"
 }

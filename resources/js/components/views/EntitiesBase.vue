@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h1>{{title}}</h1>
+        <div class="title">
+            <h1>{{title}}</h1>
+            <hr>
+        </div>
         <router-view />
     </div>
 </template>
@@ -17,3 +20,14 @@ export default {
     },
 }
 </script>
+
+<style lang="css" scoped>
+    .title {
+        padding: 1em;
+        padding-bottom: 0;
+    }
+
+    hr {
+        margin-bottom: 0;
+    }
+</style>

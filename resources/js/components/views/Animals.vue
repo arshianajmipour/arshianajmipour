@@ -1,11 +1,20 @@
 <template>
     <div class="container">
-			<v-chip x-large        class="ma-2"
+			<!-- <v-chip x-large        class="ma-2"
       color="#1D1D66"
       label
       text-color="white"> 
-	          <v-icon left> mdi-label</v-icon> لیست دام ها</v-chip><br><br>
-    	<router-link to="/newDamRegistration"><a>افزودن دام جدید+</a></router-link>
+	          <v-icon left> mdi-label</v-icon> لیست دام ها</v-chip><br><br> -->
+    	<div style="margin-bottom: 1em;">
+			<router-link
+			to="/newDamRegistration"
+			>
+				<v-btn color="accent">
+					<a>افزودن دام جدید+</a>
+				</v-btn>
+			</router-link>
+		</div>
+
     	<div class = "searching">
     		<input v-model="searched" style="background-color:#FAF8F8;  border: 1px solid #000; font-size: large;">
     		<button @click = "search(searched)" class="btn btn-warning"><i class="fa fa-search"></i>جستجو</button>
@@ -21,15 +30,15 @@
 			      >
 				  		<v-chip>    {{animal.id}}</v-chip>
 
-        				<v-chip>    شماره پلاک:{{animal.pelak}}</v-chip>
+        				<v-chip>    شماره پلاک: {{animal.pelak}}</v-chip>
 
-        				<v-chip>   جنسیت:{{animal.jensiat}}</v-chip>
+        				<v-chip>   جنسیت: {{toFarsi(animal.jensiat)}}</v-chip>
 
-        				<v-chip>  تاریخ تولد :{{animal.tavalod}}</v-chip>
+        				<v-chip>  تاریخ تولد: {{animal.tavalod}}</v-chip>
 
-        				<v-chip>  گونه:{{animal.gone}}</v-chip>
+        				<v-chip>  گونه: {{toFarsi(animal.gone)}}</v-chip>
 
-						<v-chip>   ژن :{{animal.jhen}}</v-chip>
+						<v-chip>   ژن: {{toFarsi(animal.jhen)}}</v-chip>
       				
 
 			<!-- <h3 >    {{animal.id}}</h3>
@@ -190,7 +199,8 @@ created(){
 },
 methods:{
 	fetchAnimals(){
-		
+		this.loaded = false;
+
 		fetch('api/animals')
 		.then(res =>res.json())
 		.then(res => {
@@ -259,6 +269,11 @@ methods:{
 			this.animals = res.data;
 			
 		});
+	},
+
+
+	toFarsi(str) {
+		return this.$t(str)
 	}
 },
 

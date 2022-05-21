@@ -3,7 +3,7 @@
     <div id="dashboard-container">
       <router-view v-bind="myProps"/>
     </div>
-    <!-- <dashboard-core-footer /> -->
+    <dashboard-core-footer style="position: relative; bottom: 0"/>
   </v-content>
 </template>
 
@@ -35,7 +35,7 @@
     margin: auto;
     margin-top: 1em;
     /* box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px; */
-    min-height: 80vh;
+    /* min-height: 80vh; */
     padding: 1em;
   }
 </style>

@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ 'سیستم مدیریت اطلاعات دام' }}</title>
 
     <!-- Scripts -->
     {{-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script> --}}

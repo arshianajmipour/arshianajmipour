@@ -131,6 +131,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -301,7 +303,7 @@ var render = function () {
         [
           _c(
             "v-card-title",
-            { staticStyle: { "background-color": "black", color: "white" } },
+            { staticStyle: { "background-color": "#9FA8DA", color: "white" } },
             [
               _c("h2", { staticClass: "text-center" }, [
                 _vm._v("ثبت اطلاعات دام جدید"),
@@ -524,18 +526,14 @@ var render = function () {
                             "v-btn",
                             { attrs: { color: "red", dark: "", large: "" } },
                             [
-                              _c(
-                                "a",
-                                {
-                                  staticStyle: { color: "white" },
-                                  attrs: { href: "/animals" },
-                                },
-                                [
+                              _c("router-link", { attrs: { to: "/animals" } }, [
+                                _c("a", { staticStyle: { color: "white" } }, [
                                   _c("i", { staticClass: "fa fa-angle-left" }),
                                   _vm._v(" بازگشت به لیست دام ها"),
-                                ]
-                              ),
-                            ]
+                                ]),
+                              ]),
+                            ],
+                            1
                           ),
                         ],
                         1
